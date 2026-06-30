@@ -4,121 +4,129 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Propuesta CAEHFA — Pinaro</title>
-<meta name="description" content="Propuesta de Pinaro para CAEHFA: pasar de cámara a plataforma de servicios para socios, con abono mensual fijo. Roadmap Jul–Dic 2026." />
-<meta name="theme-color" content="#0A0A0A" />
+<meta name="description" content="Propuesta de Pinaro para CAEHFA: renovar su web y sumar una plataforma de servicios para socios, con abono mensual fijo. Roadmap Jul–Dic 2026." />
+<meta name="theme-color" content="#B11E2D" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Propuesta CAEHFA — Plataforma de socios · Pinaro" />
-<meta property="og:description" content="De cámara a plataforma de servicios: login, pagos, Academia, Centro Normativo y Asistente IA. Bajo un abono fijo mensual." />
+<meta property="og:title" content="Propuesta CAEHFA — Web renovada + plataforma de socios · Pinaro" />
+<meta property="og:description" content="Renovamos la web de CAEHFA y le sumamos una plataforma de socios: pagos, Academia, Centro Normativo y Asistente IA. Bajo un abono fijo mensual." />
 <meta property="og:image" content="og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#0A0A0A;--ink-2:#1F1F1F;--text:#171717;--text-mute:#6B7280;--text-soft:#9CA3AF;
-  --canvas:#FAFAFA;--paper:#FFFFFF;--wash:#F4F6F8;--border:#E8E8E8;--border-2:#D1D5DB;
-  --cyan:#22D3EE;--violet:#8B5CF6;--pink:#F472B6;
-  --gradient:linear-gradient(135deg,#22D3EE 0%,#8B5CF6 50%,#F472B6 100%);
-  --font-sans:'Geist',ui-sans-serif,system-ui,sans-serif;--font-mono:'Geist Mono',ui-monospace,monospace;
-  --radius:12px;--radius-sm:8px;--radius-pill:100px;--maxw:1000px;
+  --red:#B11E2D; --red-2:#8E1622; --red-soft:#FBEAEC;
+  --ink:#2B2B2B; --ink-2:#32373C; --slate:#5A5E63; --soft:#8A9099;
+  --blue:#2E8BC0; --blue-soft:#E8F2F9;
+  --bg:#FFFFFF; --wash:#F5F6F8; --wash-2:#EEF0F3; --border:#E2E5E9; --border-2:#D2D7DD;
+  --maxw:1000px; --radius:10px; --radius-sm:7px;
+  --shadow:0 1px 2px rgba(20,24,28,.04),0 10px 30px rgba(20,24,28,.07);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);font-feature-settings:"ss05","liga";background:var(--canvas);color:var(--text);font-size:16px;line-height:1.55;letter-spacing:-.011em;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Lato',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.kicker{font-family:var(--font-mono);font-size:11px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.08em}
-.gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn-primary{background:var(--ink);color:var(--paper);padding:11px 20px;border-radius:var(--radius-pill);font-size:14px;font-weight:500;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit;text-decoration:none;display:inline-block}
-.btn-primary:hover{opacity:.85}
+.kick2{color:var(--red);font-weight:900;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+h2{font-size:clamp(25px,3.2vw,34px);font-weight:900;letter-spacing:-.02em;color:var(--ink);margin:9px 0 0;line-height:1.13}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:900;font-size:14px;border:none;cursor:pointer;border-radius:var(--radius-sm);padding:11px 20px;transition:.15s;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-2)}
+.btn-out{background:#fff;border:1.5px solid var(--border-2);color:var(--ink)}.btn-out:hover{border-color:var(--red);color:var(--red)}
 
 /* header */
-.top{position:sticky;top:0;z-index:30;background:rgba(250,250,250,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.top .wrap{display:flex;align-items:center;height:64px;gap:14px}
-.lockup{display:inline-flex;align-items:center;gap:.42em}
-.wordmark{font-weight:600;letter-spacing:-.04em;font-size:22px}
-.mark{display:inline-block;transform:scale(.85)}
-.top .meta{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--text-soft);text-align:right;line-height:1.4}
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.top .wrap{display:flex;align-items:center;height:66px;gap:14px}
+.lockup{display:inline-flex;align-items:center;gap:.5em}
+.wordmark{font-weight:900;letter-spacing:-.03em;font-size:23px;color:var(--ink)}
+.mark{display:inline-block}
+.top .meta{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--soft);text-align:right;line-height:1.5;text-transform:uppercase}
 
 /* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-.hero:before{content:"";position:absolute;top:-30%;right:-10%;width:60%;height:160%;background:var(--gradient);filter:blur(120px);opacity:.14;pointer-events:none}
-.hero .wrap{padding:80px 28px 64px;position:relative}
-.hero .tagchip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border-2);border-radius:var(--radius-pill);padding:5px 14px;font-family:var(--font-mono);font-size:11px;color:var(--text-mute);background:var(--paper);margin-bottom:26px}
-.hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:600;letter-spacing:-.035em;line-height:1.04;max-width:780px}
-.hero p{font-size:19px;color:var(--text-mute);max-width:600px;margin-top:22px}
+.hero{background:linear-gradient(110deg,#fff 0%,#fff 50%,var(--wash) 50%,var(--wash) 100%);border-bottom:1px solid var(--border)}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;padding:62px 28px}
+.hero .kick{display:inline-flex;align-items:center;gap:9px;color:var(--red);font-weight:900;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:18px}
+.hero .kick:before{content:"";width:24px;height:3px;background:var(--red);border-radius:2px}
+.hero h1{font-size:clamp(30px,4.3vw,46px);font-weight:900;line-height:1.08;letter-spacing:-.02em;color:var(--ink)}
+.hero h1 .r{color:var(--red)}
+.hero p.lead{font-size:17.5px;color:var(--slate);margin-top:20px;max-width:520px}
+.hero-card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.hero-card .h{background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;padding:18px 22px}
+.hero-card .h b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;font-weight:700}
+.hero-card .h h3{font-size:18px;font-weight:900;margin-top:3px}
+.hero-card .rowx{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border-top:1px solid var(--border);font-size:14.5px}
+.hero-card .rowx b{color:var(--ink);font-weight:900}
+.hero-card .rowx span{color:var(--slate)}
 
 /* sections */
-section{padding:64px 0;border-bottom:1px solid var(--border)}
-.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-.eyebrow .num{font-family:var(--font-mono);font-size:12px;color:var(--text-soft)}
-h2{font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-.025em;line-height:1.1}
-.lead{font-size:17px;color:var(--text-mute);max-width:640px;margin-top:14px}
+section{padding:60px 0;border-bottom:1px solid var(--border)}
+.eyebrow{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.eyebrow .num{font-size:13px;font-weight:900;color:var(--soft);letter-spacing:.05em}
+.lead{font-size:16.5px;color:var(--slate);max-width:660px;margin-top:13px}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
-.card{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-.card h3{font-size:17px;font-weight:600;margin-bottom:8px}
-.card p{font-size:14.5px;color:var(--text-mute)}
-.before{border-left:3px solid var(--border-2)}
-.after{border-left:3px solid var(--violet)}
-.before .lab,.after .lab{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:block}
-.before .lab{color:var(--text-soft)}.after .lab{color:var(--violet)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:26px;border-left:3px solid var(--border-2)}
+.card.red{border-left-color:var(--red)}
+.card.blue{border-left-color:var(--blue)}
+.card .lab{font-size:11.5px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);display:block;margin-bottom:9px}
+.card.red .lab{color:var(--red)}.card.blue .lab{color:var(--blue)}
+.card h3{font-size:18px;font-weight:900;color:var(--ink);margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--slate)}
+
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:13px 30px;margin-top:24px}
+.inc div{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--slate)}
+.inc .ck{color:var(--red);font-weight:900;flex-shrink:0}
+.inc b{color:var(--ink)}
 
 /* roadmap */
-.road{margin-top:36px;display:grid;gap:14px}
-.phase{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:130px 1fr}
-.phase .when{background:var(--wash);padding:22px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
-.phase .when .mo{font-family:var(--font-mono);font-size:12px;color:var(--text-mute)}
-.phase .when .ph{font-weight:600;font-size:15px;margin-top:4px}
-.phase .what{padding:22px 24px}
-.phase .what h4{font-size:16px;font-weight:600;margin-bottom:6px}
-.phase .what .items{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.phase .what .it{font-size:12.5px;background:var(--wash);border:1px solid var(--border);border-radius:var(--radius-pill);padding:4px 11px;color:var(--text-mute)}
-.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:7px}
+.road{margin-top:32px;display:grid;gap:13px}
+.phase{background:#fff;border:1px solid var(--border);border-radius:11px;overflow:hidden;display:grid;grid-template-columns:120px 1fr}
+.phase .when{background:var(--wash);padding:20px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
+.phase .when .mo{font-size:13px;font-weight:900;color:var(--red);letter-spacing:.05em}
+.phase .when .ph{font-weight:900;font-size:15px;margin-top:3px;color:var(--ink)}
+.phase .what{padding:20px 24px}
+.phase .what h4{font-size:16px;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:9px}
+.phase .what h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+.phase .what p{font-size:14px;color:var(--slate);margin-top:5px}
+.phase .what .items{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.phase .what .it{font-size:12.5px;background:var(--wash);border:1px solid var(--border);border-radius:100px;padding:4px 11px;color:var(--slate)}
 
-/* includes */
-.inc{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-top:30px}
-.inc div{display:flex;gap:11px;align-items:flex-start;font-size:15px}
-.inc .ck{color:var(--violet);font-weight:700;flex-shrink:0}
+/* inversión (banda institucional oscura) */
+.invest{background:linear-gradient(135deg,var(--ink-2),#22262b);color:#fff;border-radius:16px;padding:44px;margin-top:30px}
+.invest .lab{font-size:12px;font-weight:900;color:#ff8a96;text-transform:uppercase;letter-spacing:.08em}
+.invest .amt{font-size:clamp(40px,7vw,62px);font-weight:900;letter-spacing:-.03em;margin:8px 0 4px;line-height:1}
+.invest .amt small{font-size:20px;color:#aeb4ba;font-weight:700}
+.invest .sub{color:#c3c8ce;font-size:15px;max-width:540px}
+.invest .meta-row{display:flex;gap:40px;margin-top:30px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.13);padding-top:24px}
+.invest .meta-row .m b{display:block;font-size:22px;font-weight:900}
+.invest .meta-row .m span{font-size:12.5px;color:#aeb4ba}
+.roi{background:var(--red-soft);border:1px solid #f3d2d6;border-radius:12px;padding:22px 24px;margin-top:22px}
+.roi p{font-size:14.5px;color:var(--ink)}
+.note{font-size:12.5px;color:var(--soft);margin-top:18px}
 
-/* price */
-.pricebox{background:var(--ink);color:var(--paper);border-radius:16px;padding:44px;margin-top:36px;position:relative;overflow:hidden}
-.pricebox:before{content:"";position:absolute;top:-40%;left:-5%;width:50%;height:180%;background:var(--gradient);filter:blur(90px);opacity:.35}
-.pricebox .inner{position:relative}
-.pricebox .lab{font-family:var(--font-mono);font-size:12px;color:#cbd5e1;text-transform:uppercase;letter-spacing:.08em}
-.pricebox .amt{font-size:clamp(40px,7vw,64px);font-weight:600;letter-spacing:-.03em;margin:10px 0 4px;line-height:1}
-.pricebox .amt small{font-size:20px;color:#9ca3af;font-weight:400}
-.pricebox .sub{color:#cbd5e1;font-size:15px;max-width:520px}
-.pricebox .meta-row{display:flex;gap:36px;margin-top:30px;flex-wrap:wrap}
-.pricebox .meta-row .m b{display:block;font-size:22px;font-weight:600}
-.pricebox .meta-row .m span{font-size:12.5px;color:#9ca3af}
-
-.roi{background:var(--wash);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:24px}
-.roi b{color:var(--ink)}
-.roi p{font-size:14.5px;color:var(--text-mute)}
-
-.note{font-size:13px;color:var(--text-soft);margin-top:18px;font-family:var(--font-mono)}
-
-footer{padding:48px 0;text-align:center;color:var(--text-mute);font-size:14px}
+footer{background:var(--ink-2);color:#aeb4ba;padding:48px 0 30px;text-align:center}
 footer .lockup{justify-content:center;margin-bottom:14px}
-footer a{color:var(--ink);font-weight:500}
+footer .wordmark{color:#fff}
+footer .tag{font-size:15px;color:#cfd3d8}
+footer .ct{margin-top:8px;font-size:13.5px}
+footer a{color:#fff;text-decoration:underline}
 
-@media(max-width:760px){.two,.inc{grid-template-columns:1fr}.phase{grid-template-columns:1fr}.phase .when{border-right:none;border-bottom:1px solid var(--border)}.pricebox{padding:30px}}
-
+@media(max-width:760px){
+  .hero{background:#fff}
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding:40px 28px}
+  .two,.inc{grid-template-columns:1fr}
+  .phase{grid-template-columns:1fr}
+  .phase .when{border-right:none;border-bottom:1px solid var(--border);flex-direction:row;gap:8px;align-items:baseline}
+  .invest{padding:30px}
+}
 @media print{
-  @page{margin:14mm}
-  body{background:#fff;font-size:14px}
+  @page{margin:13mm}
+  body{background:#fff}
   .top{position:static}
-  section{padding:30px 0;break-inside:avoid}
-  .hero .wrap{padding:24px 28px 30px}
-  .hero h1{font-size:38px}
-  .phase,.card,.pricebox,.roi,.two,.inc{break-inside:avoid}
+  section{padding:28px 0;break-inside:avoid}
+  .hero{background:#fff}.hero .wrap{padding:20px 28px 28px}
+  .phase,.card,.roi,.two,.inc,.invest,.hero-card{break-inside:avoid}
   .road{break-inside:auto}
-  a[href]{text-decoration:none}
-  /* el texto con degradado se rellena como bloque en PDF: color sólido de respaldo */
-  .gradient-text{background:none !important;-webkit-text-fill-color:#7C3AED !important;color:#7C3AED !important}
-  /* ocultar los blobs decorativos difuminados que en PDF aparecen como manchas */
-  .hero:before,.pricebox:before{display:none !important}
-  .pricebox{background:#0A0A0A !important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -131,49 +139,57 @@ footer a{color:var(--ink);font-weight:500}
 
 <div class="top"><div class="wrap">
   <span class="lockup">
-    <span class="mark"><svg viewBox="0 0 40 40" width="26" height="26"><path d="M 8 18 L 20 10 L 32 18" stroke="#0A0A0A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 8 30 L 20 22 L 32 30" stroke="#0A0A0A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="mark"><svg viewBox="0 0 40 40" width="28" height="28"><path d="M 8 18 L 20 10 L 32 18" stroke="#B11E2D" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 8 30 L 20 22 L 32 30" stroke="#B11E2D" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span class="wordmark">Pinaro</span>
   </span>
-  <div class="meta">PROPUESTA PIN-2026-CAEHFA<br>30 · 06 · 2026</div>
+  <div class="meta">Propuesta PIN-2026-CAEHFA<br>30 · 06 · 2026</div>
 </div></div>
 
+<!-- HERO -->
 <div class="hero"><div class="wrap">
-  <span class="tagchip">● Propuesta comercial · Web renovada + plataforma de socios</span>
-  <h1>Tu web renovada y una <span class="gradient-text">plataforma de servicios</span> para CAEHFA.</h1>
-  <p>Renovamos el sitio que CAEHFA ya tiene y le sumamos una plataforma que el socio usa todos los días, que monetiza la relación y que crece mes a mes. Bajo un abono fijo, sin desembolso inicial.</p>
+  <div>
+    <span class="kick">Propuesta comercial · Pinaro para CAEHFA</span>
+    <h1>Tu web renovada y una <span class="r">plataforma de servicios</span> para CAEHFA.</h1>
+    <p class="lead">Renovamos el sitio que CAEHFA ya tiene y le sumamos una plataforma que el socio usa todos los días, que monetiza la relación y que crece mes a mes. Bajo un abono fijo, sin desembolso inicial.</p>
+  </div>
+  <div class="hero-card">
+    <div class="h"><b>La propuesta en resumen</b><h3>Dos capas, un abono</h3></div>
+    <div class="rowx"><span>Capa 1 — Web institucional renovada</span><b>✓</b></div>
+    <div class="rowx"><span>Capa 2 — Plataforma de socios</span><b>✓</b></div>
+    <div class="rowx"><span>Abono mensual</span><b>$ 750.000</b></div>
+    <div class="rowx"><span>Plazo</span><b>Jul – Dic 2026</b></div>
+  </div>
 </div></div>
 
-<!-- contexto -->
+<!-- 01 contexto -->
 <section><div class="wrap">
-  <div class="eyebrow"><span class="num">01</span><span class="kicker">Entendemos la situación</span></div>
+  <div class="eyebrow"><span class="num">01</span><span class="kick2">Entendemos la situación</span></div>
   <h2>Hoy el sitio existe. No trabaja para el socio.</h2>
-  <p class="lead">caehfa.org.ar es un WordPress institucional: cumple la función de estar en internet, pero no resuelve nada concreto. La normativa está dispersa, la Academia solo registra que los cursos ocurrieron, el directorio es una lista muerta y no hay forma de cobrar ni de saber quién usa qué.</p>
+  <p class="lead">caehfa.org.ar es un WordPress institucional: cumple la función de estar en internet, pero no resuelve nada concreto. La normativa está dispersa, la Academia solo registra que los cursos ocurrieron, el directorio es una lista estática y no hay forma de cobrar ni de saber quién usa qué.</p>
   <div class="two">
-    <div class="card before"><span class="lab">Hoy — sitio vidriera</span><h3>El socio lo visita una vez al año</h3><p>Para buscar un teléfono o ver si hay una novedad. Sin login, sin pagos, sin servicios. La cámara no captura ningún dato de uso.</p></div>
-    <div class="card after"><span class="lab">Futuro — plataforma de servicios</span><h3>El socio lo usa cada semana</h3><p>Porque le resuelve problemas reales: consulta normativa, paga la cuota, se capacita y aparece ante compradores. Y la cámara monetiza esa relación.</p></div>
+    <div class="card"><span class="lab">Hoy — sitio vidriera</span><h3>El socio lo visita una vez al año</h3><p>Para buscar un teléfono o ver si hay una novedad. Sin login, sin pagos, sin servicios. La cámara no captura ningún dato de uso.</p></div>
+    <div class="card red"><span class="lab">Futuro — plataforma de servicios</span><h3>El socio lo usa cada semana</h3><p>Porque le resuelve problemas reales: consulta normativa, paga la cuota, se capacita y aparece ante compradores. Y la cámara monetiza esa relación.</p></div>
   </div>
 </div></section>
 
-<!-- que construimos -->
+<!-- 02 qué construimos -->
 <section><div class="wrap">
-  <div class="eyebrow"><span class="num">02</span><span class="kicker">Qué construimos</span></div>
+  <div class="eyebrow"><span class="num">02</span><span class="kick2">Qué construimos</span></div>
   <h2>Tu web renovada, más una plataforma de socios.</h2>
   <p class="lead">Trabajamos en dos capas. Primero renovamos el sitio que CAEHFA ya tiene —su identidad, su contenido, su navegación—. Sobre esa base, sumamos los servicios que lo convierten en una plataforma que el socio usa cada semana.</p>
-
-  <div class="two" style="margin-top:30px">
-    <div class="card after" style="border-left-color:var(--cyan)">
-      <span class="lab" style="color:var(--cyan)">Capa 1 · incluida en el abono</span>
+  <div class="two">
+    <div class="card blue">
+      <span class="lab">Capa 1 · incluida en el abono</span>
       <h3>Tu sitio institucional, renovado</h3>
       <p>Rediseño completo de caehfa.org.ar respetando su identidad: sus secciones actuales, novedades, catálogo de empresas, observatorio y academia. Más moderno, más rápido y pensado para el celular.</p>
     </div>
-    <div class="card after">
+    <div class="card red">
       <span class="lab">Capa 2 · el diferencial</span>
       <h3>La plataforma de socios</h3>
       <p>Lo que hoy no existe y monetiza la relación: área privada, pagos, capacitación, normativa y un asistente con IA. Estos seis módulos:</p>
     </div>
   </div>
-
-  <div class="inc" style="margin-top:26px">
+  <div class="inc">
     <div><span class="ck">→</span><div><b>Área privada + login de socios</b> — estado de cuota, perfil editable, panel personalizado.</div></div>
     <div><span class="ck">→</span><div><b>Pagos online (Mercado Pago)</b> — cuotas y cursos en el mismo flujo, comprobantes automáticos.</div></div>
     <div><span class="ck">→</span><div><b>Academia real</b> — inscripción, pago, grabaciones, materiales y certificados con QR.</div></div>
@@ -182,32 +198,32 @@ footer a{color:var(--ink);font-weight:500}
     <div><span class="ck">→</span><div><b>Directorio inteligente + Observatorio</b> — perfiles visibles y dashboard del sector.</div></div>
   </div>
   <p style="margin-top:28px;font-size:15px;display:flex;gap:12px;flex-wrap:wrap">
-    <a class="btn-primary" href="index.html">Ver la web renovada →</a>
-    <a class="btn-primary" href="plataforma.html" style="background:transparent;color:var(--ink);border:1px solid var(--border-2)">Ver la plataforma de socios →</a>
+    <a class="btn btn-red" href="index.html">Ver la web renovada →</a>
+    <a class="btn btn-out" href="plataforma.html">Ver la plataforma de socios →</a>
   </p>
 </div></section>
 
-<!-- roadmap -->
+<!-- 03 roadmap -->
 <section><div class="wrap">
-  <div class="eyebrow"><span class="num">03</span><span class="kicker">Roadmap · Julio a Diciembre 2026</span></div>
+  <div class="eyebrow"><span class="num">03</span><span class="kick2">Roadmap · Julio a Diciembre 2026</span></div>
   <h2>Qué entregamos este semestre.</h2>
-  <p class="lead">Priorizamos el valor visible primero. Cada mes el socio ve algo nuevo funcionando, no esperamos seis meses para mostrar resultados. Licitaciones y Portal de beneficios quedan planificados para la expansión 2027.</p>
+  <p class="lead">Priorizamos el valor visible primero. Cada mes CAEHFA ve algo nuevo funcionando, no esperamos seis meses para mostrar resultados. Licitaciones y Portal de beneficios quedan planificados para la expansión 2027.</p>
   <div class="road">
-    <div class="phase"><div class="when"><span class="mo">JUL</span><span class="ph">Fundación</span></div><div class="what"><h4><span class="dot" style="background:var(--cyan)"></span>Sitio renovado + Login de socios</h4><p style="font-size:14px;color:var(--text-mute)">Rediseño del sitio público y puesta en marcha del área privada con perfil de empresa.</p><div class="items"><span class="it">Diseño e identidad</span><span class="it">Login multinivel</span><span class="it">Perfil de empresa</span></div></div></div>
-    <div class="phase"><div class="when"><span class="mo">AGO</span><span class="ph">Monetización</span></div><div class="what"><h4><span class="dot" style="background:var(--cyan)"></span>Pagos online + Estado de cuota</h4><p style="font-size:14px;color:var(--text-mute)">Integración con Mercado Pago, historial de pagos y comprobantes automáticos.</p><div class="items"><span class="it">Mercado Pago</span><span class="it">Cuotas</span><span class="it">Panel admin de ingresos</span></div></div></div>
-    <div class="phase"><div class="when"><span class="mo">SEP</span><span class="ph">Academia</span></div><div class="what"><h4><span class="dot" style="background:var(--violet)"></span>Plataforma de capacitación</h4><p style="font-size:14px;color:var(--text-mute)">Catálogo de cursos, inscripción y pago, grabaciones, materiales y certificados con QR.</p><div class="items"><span class="it">Cursos arancelados</span><span class="it">Certificados QR</span><span class="it">Repositorio</span></div></div></div>
-    <div class="phase"><div class="when"><span class="mo">OCT</span><span class="ph">Normativa</span></div><div class="what"><h4><span class="dot" style="background:var(--violet)"></span>Centro Normativo</h4><p style="font-size:14px;color:var(--text-mute)">Repositorio regulatorio organizado, buscador avanzado y alertas automáticas por categoría.</p><div class="items"><span class="it">Buscador</span><span class="it">Alertas email</span><span class="it">Vigente/derogada</span></div></div></div>
-    <div class="phase"><div class="when"><span class="mo">NOV</span><span class="ph">Diferencial</span></div><div class="what"><h4><span class="dot" style="background:var(--pink)"></span>Asistente Normativo IA (RAG)</h4><p style="font-size:14px;color:var(--text-mute)">Chatbot entrenado sobre el corpus del sector que responde citando la fuente y deriva a secretaría.</p><div class="items"><span class="it">RAG</span><span class="it">Citas a fuente</span><span class="it">Leads para secretaría</span></div></div></div>
-    <div class="phase"><div class="when"><span class="mo">DIC</span><span class="ph">Negocio</span></div><div class="what"><h4><span class="dot" style="background:var(--pink)"></span>Directorio inteligente + Observatorio v1</h4><p style="font-size:14px;color:var(--text-mute)">Perfiles enriquecidos visibles para compradores y dashboard del sector. Capacitación al equipo de CAEHFA.</p><div class="items"><span class="it">Búsqueda semántica</span><span class="it">Dashboard</span><span class="it">Capacitación</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">JUL</span><span class="ph">Fundación</span></div><div class="what"><h4><span class="dot"></span>Sitio renovado + Login de socios</h4><p>Rediseño del sitio público y puesta en marcha del área privada con perfil de empresa.</p><div class="items"><span class="it">Diseño e identidad</span><span class="it">Login multinivel</span><span class="it">Perfil de empresa</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">AGO</span><span class="ph">Monetización</span></div><div class="what"><h4><span class="dot"></span>Pagos online + Estado de cuota</h4><p>Integración con Mercado Pago, historial de pagos y comprobantes automáticos.</p><div class="items"><span class="it">Mercado Pago</span><span class="it">Cuotas</span><span class="it">Panel de ingresos</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">SEP</span><span class="ph">Academia</span></div><div class="what"><h4><span class="dot"></span>Plataforma de capacitación</h4><p>Catálogo de cursos, inscripción y pago, grabaciones, materiales y certificados con QR.</p><div class="items"><span class="it">Cursos arancelados</span><span class="it">Certificados QR</span><span class="it">Repositorio</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">OCT</span><span class="ph">Normativa</span></div><div class="what"><h4><span class="dot"></span>Centro Normativo</h4><p>Repositorio regulatorio organizado, buscador avanzado y alertas automáticas por categoría.</p><div class="items"><span class="it">Buscador</span><span class="it">Alertas email</span><span class="it">Vigente/derogada</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">NOV</span><span class="ph">Diferencial</span></div><div class="what"><h4><span class="dot"></span>Asistente Normativo IA (RAG)</h4><p>Asistente entrenado sobre el corpus del sector que responde citando la fuente y deriva a secretaría.</p><div class="items"><span class="it">RAG</span><span class="it">Citas a fuente</span><span class="it">Leads para secretaría</span></div></div></div>
+    <div class="phase"><div class="when"><span class="mo">DIC</span><span class="ph">Negocio</span></div><div class="what"><h4><span class="dot"></span>Directorio inteligente + Observatorio</h4><p>Perfiles enriquecidos visibles para compradores y dashboard del sector. Capacitación al equipo de CAEHFA.</p><div class="items"><span class="it">Búsqueda semántica</span><span class="it">Dashboard</span><span class="it">Capacitación</span></div></div></div>
   </div>
 </div></section>
 
-<!-- abono / incluye -->
+<!-- 04 incluye -->
 <section><div class="wrap">
-  <div class="eyebrow"><span class="num">04</span><span class="kicker">El abono incluye</span></div>
+  <div class="eyebrow"><span class="num">04</span><span class="kick2">El abono incluye</span></div>
   <h2>No es un proyecto que entregamos y nos vamos.</h2>
   <div class="inc">
-    <div><span class="ck">✓</span><div>Construcción progresiva de toda la plataforma según el roadmap</div></div>
+    <div><span class="ck">✓</span><div>Renovación de la web y construcción progresiva de la plataforma</div></div>
     <div><span class="ck">✓</span><div>Hosting, dominio y mantenimiento de la infraestructura</div></div>
     <div><span class="ck">✓</span><div>Soporte y correcciones continuas</div></div>
     <div><span class="ck">✓</span><div>Evolución: nuevas funciones e IA sin empezar de cero</div></div>
@@ -216,31 +232,31 @@ footer a{color:var(--ink);font-weight:500}
   </div>
 </div></section>
 
-<!-- price -->
+<!-- 05 inversión -->
 <section><div class="wrap">
-  <div class="eyebrow"><span class="num">05</span><span class="kicker">Inversión</span></div>
+  <div class="eyebrow"><span class="num">05</span><span class="kick2">Inversión</span></div>
   <h2>Un abono fijo. Sin sorpresas.</h2>
-  <div class="pricebox"><div class="inner">
+  <div class="invest">
     <span class="lab">Abono mensual</span>
     <div class="amt">$ 750.000 <small>/ mes + IVA</small></div>
-    <p class="sub">Construcción + operación + evolución de la plataforma completa. Sin desembolso inicial: CAEHFA empieza a usar y monetizar la plataforma desde el primer mes.</p>
+    <p class="sub">Web renovada + construcción, operación y evolución de la plataforma. Sin desembolso inicial: CAEHFA empieza a usar y monetizar la plataforma desde el primer mes.</p>
     <div class="meta-row">
       <div class="m"><b>6 meses</b><span>Jul – Dic 2026</span></div>
       <div class="m"><b>$ 4.500.000</b><span>inversión del semestre</span></div>
       <div class="m"><b>48–72 hs</b><span>primer entregable visible</span></div>
     </div>
-  </div></div>
+  </div>
   <div class="roi">
     <p><b>La plataforma se autofinancia.</b> Con la Academia monetizada, el acceso al Observatorio para no socios y la conversión de nuevos socios que genera el login, el abono se recupera con un puñado de cursos vendidos o un par de altas por mes. El resto es valor neto para la cámara y sus asociados.</p>
   </div>
   <p class="note">Condiciones: facturación mensual · permanencia mínima sugerida 6 meses · costos de APIs externas (IA, Mercado Pago) a cargo de CAEHFA · propuesta válida por 30 días.</p>
 </div></section>
 
-<footer>
-  <span class="lockup"><span class="mark"><svg viewBox="0 0 40 40" width="24" height="24"><path d="M 8 18 L 20 10 L 32 18" stroke="#0A0A0A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 8 30 L 20 22 L 32 30" stroke="#0A0A0A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="wordmark">Pinaro</span></span>
-  <div>Sistemas que crecen con vos.</div>
-  <div style="margin-top:8px;font-size:13px">Matías Venutolo · <a href="mailto:hola@pinaro.ar">hola@pinaro.ar</a> · pinaro.ar</div>
-</footer>
+<footer><div class="wrap">
+  <span class="lockup"><span class="mark"><svg viewBox="0 0 40 40" width="24" height="24"><path d="M 8 18 L 20 10 L 32 18" stroke="#B11E2D" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 8 30 L 20 22 L 32 30" stroke="#B11E2D" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="wordmark">Pinaro</span></span>
+  <div class="tag">Sistemas que crecen con vos.</div>
+  <div class="ct">Matías Venutolo · <a href="mailto:hola@pinaro.ar">hola@pinaro.ar</a> · pinaro.ar</div>
+</div></footer>
 
 </body>
 </html>
