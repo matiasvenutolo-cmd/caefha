@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CAEHFA — Plataforma de Socios (Demo)</title>
+<meta name="description" content="Prototipo de la nueva plataforma digital de CAEHFA: área de socios, Asistente Normativo con IA, Academia y pagos online. Desarrollado por Pinaro." />
+<meta name="theme-color" content="#0A2540" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CAEHFA — Nueva plataforma de socios (demo)" />
+<meta property="og:description" content="Probá el prototipo: área privada, Asistente Normativo con IA, Academia con certificados y pagos online. Por Pinaro." />
+<meta property="og:image" content="og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0A2540; --navy-2:#0E3A5C; --blue:#0E5A8A; --blue-2:#1273B0;
+  --teal:#00A6A6; --teal-soft:#E6F6F6;
+  --bg:#F6F8FB; --paper:#FFFFFF; --wash:#EEF3F8;
+  --text:#16202B; --mute:#5A6B7B; --soft:#8A99A8;
+  --border:#E3E9F0; --border-2:#D3DCE6;
+  --ok:#138A52; --ok-bg:#E5F4EC; --warn:#B9740B; --warn-bg:#FBF0DD; --bad:#C0392B; --bad-bg:#FBE9E7;
+  --radius:14px; --radius-sm:10px; --shadow:0 1px 2px rgba(16,38,64,.04),0 8px 28px rgba(16,38,64,.06);
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+html{overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.view{display:none;animation:fade .35s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ===== Demo bar ===== */
+.demobar{background:var(--navy);color:#cfe0ee;font-size:12px;text-align:center;padding:7px 16px;letter-spacing:.02em}
+.demobar b{color:#fff}
+
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;gap:28px;height:68px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.brand .logo{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--teal));display:grid;place-items:center;color:#fff;font-weight:800;font-size:17px;letter-spacing:-.02em;box-shadow:0 4px 12px rgba(14,90,138,.3)}
+.brand .name{font-weight:800;font-size:19px;color:var(--navy);letter-spacing:-.02em}
+.brand .name span{display:block;font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.04em;margin-top:-2px}
+.nav .links{display:flex;gap:4px;margin-left:8px}
+.nav .links a{padding:8px 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--mute);cursor:pointer;transition:.15s}
+.nav .links a:hover{background:var(--wash);color:var(--navy)}
+.nav .spacer{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;border:none;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;border-radius:9px;padding:9px 16px;transition:.15s;white-space:nowrap}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-2)}
+.btn-ghost{background:var(--wash);color:var(--navy)}.btn-ghost:hover{background:var(--border)}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{filter:brightness(1.07)}
+.btn-sm{padding:6px 12px;font-size:13px}
+.menu-tog{display:none}
+
+/* ===== Hero ===== */
+.hero{background:radial-gradient(120% 130% at 80% -10%,rgba(0,166,166,.18),transparent 55%),linear-gradient(180deg,#0A2540,#0E3A5C);color:#fff;padding:84px 0 92px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:600;color:#bfe6e6;margin-bottom:22px}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.03em;max-width:780px}
+.hero h1 em{font-style:normal;color:#3fdede}
+.hero p.lead{font-size:18px;color:#c4d4e4;max-width:600px;margin:22px 0 32px}
+.hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-primary{background:#fff;color:var(--navy);padding:13px 22px;font-size:15px}
+.hero .btn-primary:hover{background:#eaf2f8}
+.hero .btn-out{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:13px 22px;font-size:15px}
+.hero .btn-out:hover{background:rgba(255,255,255,.08)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px;border-top:1px solid rgba(255,255,255,.13);padding-top:30px}
+.stats .s b{display:block;font-size:32px;font-weight:800;letter-spacing:-.02em}
+.stats .s span{font-size:13px;color:#9fb4c9}
+
+/* ===== Sections ===== */
+section.block{padding:72px 0}
+.kick{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-.025em;color:var(--navy);margin:10px 0 12px}
+.sub{font-size:16px;color:var(--mute);max-width:620px}
+.center{text-align:center}.center .sub{margin:0 auto}
+
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.feat{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.18s;cursor:pointer}
+.feat:hover{transform:translateY(-3px);border-color:var(--border-2);box-shadow:0 12px 34px rgba(16,38,64,.1)}
+.feat .ic{width:46px;height:46px;border-radius:11px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:16px;font-size:22px}
+.feat h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.feat p{font-size:14.5px;color:var(--mute)}
+.feat .more{margin-top:14px;font-size:13.5px;font-weight:600;color:var(--blue);display:inline-flex;gap:5px;align-items:center}
+.feat:hover .more{gap:9px}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:100px}
+.t-ok{background:var(--ok-bg);color:var(--ok)} .t-warn{background:var(--warn-bg);color:var(--warn)} .t-bad{background:var(--bad-bg);color:var(--bad)}
+.t-new{background:var(--teal-soft);color:#067}
+
+/* ===== Footer ===== */
+footer{background:var(--navy);color:#9fb4c9;padding:54px 0 30px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h4{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+footer a{display:block;color:#9fb4c9;padding:4px 0;cursor:pointer}footer a:hover{color:#fff}
+footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-size:12.5px;color:#7088a0;flex-wrap:wrap;gap:10px}
+
+/* ===== Login ===== */
+.login-wrap{min-height:calc(100vh - 96px);display:grid;grid-template-columns:1fr 1fr}
+.login-art{background:radial-gradient(120% 120% at 20% 0%,rgba(0,166,166,.25),transparent 55%),linear-gradient(160deg,#0A2540,#0E3A5C);color:#fff;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.login-art h2{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:18px}
+.login-art p{color:#c4d4e4;font-size:16px;max-width:380px}
+.login-art ul{list-style:none;margin-top:30px;display:grid;gap:13px}
+.login-art li{display:flex;gap:11px;align-items:center;color:#dce8f2;font-size:15px}
+.login-art li i{width:24px;height:24px;border-radius:7px;background:rgba(0,166,166,.25);display:grid;place-items:center;font-style:normal;color:#5ee;font-size:13px}
+.login-form{display:grid;place-items:center;padding:40px}
+.login-card{width:100%;max-width:380px}
+.login-card h3{font-size:24px;font-weight:800;color:var(--navy)}
+.login-card .m{color:var(--mute);margin:6px 0 26px;font-size:14.5px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field input{width:100%;padding:11px 13px;border:1px solid var(--border-2);border-radius:9px;font-family:inherit;font-size:14.5px;background:var(--paper)}
+.field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(14,90,138,.12)}
+.login-card .btn-primary{width:100%;justify-content:center;padding:12px}
+.login-foot{text-align:center;font-size:13.5px;color:var(--mute);margin-top:18px}
+.login-foot a{color:var(--blue);font-weight:600;cursor:pointer}
+
+/* ===== App (private) ===== */
+.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 96px)}
+.side{background:var(--paper);border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:96px;height:calc(100vh - 96px)}
+.side .uname{padding:0 10px 18px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.side .uname b{display:block;font-size:14.5px;color:var(--navy)}
+.side .uname span{font-size:12.5px;color:var(--soft)}
+.side nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:14px;font-weight:500;color:var(--mute);cursor:pointer;margin-bottom:2px;transition:.13s}
+.side nav a:hover{background:var(--wash);color:var(--navy)}
+.side nav a.on{background:var(--blue);color:#fff}
+.side nav a .e{font-size:17px;width:20px;text-align:center}
+.main{padding:32px 36px;overflow:auto}
+.crumbs{font-size:13px;color:var(--soft);margin-bottom:6px}
+.ptitle{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:24px}
+.subapp{display:none}.subapp.on{display:block;animation:fade .3s ease}
+
+.cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card .lab{font-size:12.5px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+.card .big{font-size:26px;font-weight:800;color:var(--navy);margin-top:8px;letter-spacing:-.02em}
+.card .note{font-size:13px;color:var(--mute);margin-top:4px}
+
+.panel{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.panel .ph{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border)}
+.panel .ph h3{font-size:16px;font-weight:700;color:var(--navy)}
+.panel .pb{padding:6px 0}
+.row{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--border);font-size:14px}
+.row:last-child{border-bottom:none}
+.row .ri{display:flex;align-items:center;gap:13px}
+.row .ri .dot{width:9px;height:9px;border-radius:50%}
+.row b{color:var(--navy);font-weight:600}
+.row small{color:var(--soft);display:block;font-size:12.5px;font-weight:400}
+
+.quota{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:var(--radius);padding:26px;display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;box-shadow:var(--shadow);flex-wrap:wrap;gap:18px}
+.quota .ql span{font-size:13px;color:#bcd2e6}
+.quota .ql b{display:block;font-size:30px;font-weight:800;margin-top:4px;letter-spacing:-.02em}
+.quota .ql .st{margin-top:10px}
+.quota .btn{background:#fff;color:var(--navy)}
+
+/* ===== Normativo ===== */
+.norm-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+.search{display:flex;gap:10px;margin-bottom:18px}
+.search input{flex:1;padding:12px 15px;border:1px solid var(--border-2);border-radius:10px;font-family:inherit;font-size:14.5px;background:var(--paper)}
+.search input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(14,90,138,.12)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{font-size:12.5px;font-weight:600;padding:6px 13px;border-radius:100px;background:var(--paper);border:1px solid var(--border-2);color:var(--mute);cursor:pointer}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.norm{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow)}
+.norm .nt{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.norm h4{font-size:15px;font-weight:700;color:var(--navy)}
+.norm .meta{font-size:12.5px;color:var(--soft);margin-top:3px;font-family:ui-monospace,monospace}
+.norm p{font-size:13.5px;color:var(--mute);margin-top:9px}
+.norm .acts{margin-top:12px;display:flex;gap:8px}
+
+/* chat */
+.chat{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;position:sticky;top:120px}
+.chat .ch{background:linear-gradient(135deg,var(--teal),#0a8585);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:11px}
+.chat .ch .av{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:18px}
+.chat .ch b{font-size:15px;display:block}.chat .ch span{font-size:12px;color:#cdf3f3}
+.chat .body{padding:18px;display:flex;flex-direction:column;gap:14px;max-height:430px;overflow:auto}
+.msg{max-width:88%;font-size:14px;line-height:1.5}
+.msg.u{align-self:flex-end;background:var(--blue);color:#fff;padding:10px 14px;border-radius:14px 14px 4px 14px}
+.msg.a{align-self:flex-start;background:var(--wash);color:var(--text);padding:12px 15px;border-radius:14px 14px 14px 4px}
+.msg.a .cite{margin-top:10px;padding-top:10px;border-top:1px solid var(--border-2);font-size:12.5px}
+.msg.a .cite a{color:var(--blue);font-weight:600;display:flex;gap:6px;align-items:center;padding:3px 0;cursor:pointer}
+.chat .cf{padding:14px 16px;border-top:1px solid var(--border);display:flex;gap:9px}
+.chat .cf input{flex:1;border:1px solid var(--border-2);border-radius:10px;padding:10px 13px;font-family:inherit;font-size:14px}
+.chat .cf input:focus{outline:none;border-color:var(--teal)}
+.chat .cf button{background:var(--teal);color:#fff;border:none;border-radius:10px;width:42px;cursor:pointer;font-size:17px}
+.suggest{display:flex;gap:7px;flex-wrap:wrap;padding:0 16px 14px}
+.suggest .s{font-size:12px;border:1px solid var(--border-2);border-radius:100px;padding:6px 11px;color:var(--mute);cursor:pointer;background:var(--paper)}
+.suggest .s:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ===== Academia ===== */
+.course{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.18s;cursor:pointer}
+.course:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(16,38,64,.1)}
+.course .thumb{height:120px;background:linear-gradient(135deg,var(--blue),var(--teal));position:relative;display:flex;align-items:flex-end;padding:14px}
+.course .thumb.v2{background:linear-gradient(135deg,#5b3da8,#0E5A8A)}
+.course .thumb.v3{background:linear-gradient(135deg,#0a8585,#0A2540)}
+.course .thumb .px{position:absolute;top:12px;right:12px}
+.course .thumb .ty{color:#fff;font-size:12px;font-weight:600;opacity:.9}
+.course .cb{padding:18px}
+.course h4{font-size:16px;font-weight:700;color:var(--navy);line-height:1.3}
+.course .desc{font-size:13.5px;color:var(--mute);margin:8px 0 14px}
+.course .cm{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--soft)}
+.course .price{font-weight:800;color:var(--navy);font-size:16px}
+.course .price small{font-weight:500;color:var(--ok);font-size:12px}
+.progress{height:7px;background:var(--wash);border-radius:100px;overflow:hidden;margin:12px 0 6px}
+.progress i{display:block;height:100%;background:var(--teal);border-radius:100px}
+
+.certbar{background:linear-gradient(120deg,var(--teal-soft),#fff);border:1px solid var(--teal);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.certbar .qr{width:60px;height:60px;border-radius:10px;background:#fff;border:2px solid var(--navy);display:grid;place-items:center;font-size:30px}
+.certbar b{color:var(--navy);font-size:16px}.certbar p{font-size:13.5px;color:var(--mute);margin-top:2px}
+
+@media(max-width:900px){
+  .nav{gap:9px;height:58px}
+  .nav .links{display:none}
+  .brand .name{font-size:17px}
+  .brand .name span{display:none}
+  .brand .logo{width:34px;height:34px;font-size:15px}
+  header .btn-sm{padding:6px 11px;font-size:12.5px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+  .g3,.g2{grid-template-columns:1fr}
+  .login-wrap{grid-template-columns:1fr}.login-art{display:none}
+  /* área privada: la barra lateral pasa a ser una tira de pestañas deslizable */
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:sticky;top:58px;height:auto;z-index:20;background:var(--paper);min-width:0;
+        border-right:none;border-bottom:1px solid var(--border);padding:9px 12px}
+  .side .uname{display:none}
+  .side nav{display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .side nav::-webkit-scrollbar{display:none}
+  .side nav a{white-space:nowrap;flex:0 0 auto;margin-bottom:0;padding:9px 13px}
+  .main{padding:22px 16px;overflow:visible;min-width:0}
+  .cards-row{grid-template-columns:1fr}
+  .norm-grid{grid-template-columns:minmax(0,1fr)}
+  .norm-grid>div{min-width:0}
+  .chat{position:static;min-width:0}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="demobar">💡 <b>PROPUESTA PINARO — Plataforma de socios</b> · Demo de lo que CAEHFA podría sumar a su web · <a href="index.html" style="color:#fff;text-decoration:underline">Ver la web renovada</a></div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <div class="brand" onclick="go('home')">
+      <div class="logo">C</div>
+      <div class="name">CAEHFA<span>Cámara Argentina de Empresas de Tecnología Médica</span></div>
+    </div>
+    <div class="links">
+      <a onclick="go('home')">Institucional</a>
+      <a onclick="go('home')">Catálogo de Socios</a>
+      <a onclick="goApp('normativo')">Centro Normativo</a>
+      <a onclick="goApp('academia')">Academia</a>
+      <a onclick="go('home')">Observatorio</a>
+    </div>
+    <div class="spacer"></div>
+    <button class="btn btn-ghost btn-sm" onclick="go('login')">Acceso Socios</button>
+    <button class="btn btn-primary btn-sm" onclick="go('login')">Asociate</button>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div id="home" class="view active">
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill">● Nueva plataforma de servicios para socios</span>
+      <h1>La tecnología médica argentina, <em>conectada en un solo lugar.</em></h1>
+      <p class="lead">Normativa, capacitación, catálogo y oportunidades de negocio. CAEHFA evoluciona de cámara a plataforma que trabaja para vos todos los días.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="go('login')">Ingresar al área de socios →</button>
+        <button class="btn btn-out" onclick="goApp('normativo')">Probar el Asistente Normativo</button>
+      </div>
+      <div class="stats">
+        <div class="s"><b>+400</b><span>empresas asociadas</span></div>
+        <div class="s"><b>+4.500</b><span>empleos directos</span></div>
+        <div class="s"><b>+15.000</b><span>empleos indirectos</span></div>
+        <div class="s"><b>24/7</b><span>acceso a servicios</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:48px">
+        <span class="kick">Todo lo que suma la nueva plataforma</span>
+        <h2 class="h2">Servicios que el socio usa cada semana</h2>
+        <p class="sub">Dejamos atrás el sitio vidriera. Cada módulo resuelve un problema concreto del sector.</p>
+      </div>
+      <div class="grid g3">
+        <div class="feat" onclick="go('login')">
+          <div class="ic">🔐</div><h3>Área privada de socios</h3>
+          <p>Estado de cuota, pago online, perfil de empresa editable y panel personalizado al ingresar.</p>
+          <span class="more">Ver demo →</span>
+        </div>
+        <div class="feat" onclick="goApp('normativo')">
+          <div class="ic">🤖</div><h3>Asistente Normativo IA</h3>
+          <p>Preguntá en lenguaje natural sobre ANMAT, IRAM o MERCOSUR. Respuesta inmediata citando la fuente oficial.</p>
+          <span class="more">Probar ahora →</span>
+        </div>
+        <div class="feat" onclick="goApp('normativo')">
+          <div class="ic">📋</div><h3>Centro Normativo</h3>
+          <p>Repositorio organizado por organismo y producto, con buscador y alertas cuando cambia una norma que te afecta.</p>
+          <span class="more">Explorar →</span>
+        </div>
+        <div class="feat" onclick="goApp('academia')">
+          <div class="ic">🎓</div><h3>Academia CAEHFA</h3>
+          <p>Cursos con inscripción y pago online, grabaciones, materiales y certificados digitales con QR verificable.</p>
+          <span class="more">Ver catálogo →</span>
+        </div>
+        <div class="feat" onclick="go('login')">
+          <div class="ic">🏢</div><h3>Directorio Inteligente</h3>
+          <p>Perfil enriquecido por empresa visible para compradores hospitalarios y licitantes. Tráfico externo con valor directo.</p>
+          <span class="more">Ver demo →</span>
+        </div>
+        <div class="feat" onclick="go('login')">
+          <div class="ic">📊</div><h3>Observatorio del Sector</h3>
+          <p>Dashboard con exportaciones, habilitaciones ANMAT y empleo. Resúmenes de noticias generados con IA.</p>
+          <span class="more">Ver demo →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:center;gap:48px">
+        <div>
+          <span class="kick">El diferencial</span>
+          <h2 class="h2">Un asistente que entiende la normativa del sector</h2>
+          <p class="sub" style="margin-bottom:18px">Hoy saber qué norma aplica para registrar un producto lleva horas. El Asistente Normativo responde en segundos, cita la fuente oficial y, cuando el caso lo requiere, deriva a la secretaría técnica con todo el contexto.</p>
+          <div style="display:grid;gap:12px;margin-top:8px">
+            <div style="display:flex;gap:11px;align-items:center"><span class="tag t-ok">✓</span> Respuestas con link al documento oficial</div>
+            <div style="display:flex;gap:11px;align-items:center"><span class="tag t-ok">✓</span> Disponible 24/7 para todos los socios</div>
+            <div style="display:flex;gap:11px;align-items:center"><span class="tag t-ok">✓</span> Cada consulta derivada es un lead calificado para la cámara</div>
+          </div>
+          <button class="btn btn-teal" style="margin-top:24px" onclick="goApp('normativo')">Probar el Asistente →</button>
+        </div>
+        <div class="chat" style="position:static">
+          <div class="ch"><div class="av">🤖</div><div><b>Asistente Normativo CAEHFA</b><span>En línea · entrenado con el corpus del sector</span></div></div>
+          <div class="body">
+            <div class="msg u">¿Qué necesito para registrar un ventilador mecánico ante ANMAT?</div>
+            <div class="msg a">Un ventilador mecánico es un <b>producto médico Clase III</b>. Necesitás: registro del establecimiento (habilitación de empresa), legajo técnico del producto, certificación de sistema de calidad <b>ISO 13485</b> y el trámite de registro ante ANMAT bajo la Disp. 2318/02 (TO 2004).
+              <div class="cite"><a>📄 Disposición ANMAT 2318/02 — Registro de Productos Médicos</a><a>📄 Clasificación por riesgo — Anexo I</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:14px"><div class="logo">C</div><div class="name" style="color:#fff">CAEHFA</div></div>
+          <p style="font-size:13.5px;max-width:300px">Cámara Argentina de Empresas de Tecnología Médica. Representamos a más de 400 empresas fabricantes nacionales.</p>
+        </div>
+        <div><h4>Plataforma</h4><a onclick="go('login')">Área de socios</a><a onclick="goApp('normativo')">Centro Normativo</a><a onclick="goApp('academia')">Academia</a><a onclick="go('home')">Observatorio</a></div>
+        <div><h4>Institucional</h4><a>Quiénes somos</a><a>Autoridades</a><a>Cadena de valor</a><a>Internacionalización</a></div>
+        <div><h4>Contacto</h4><a>info@caehfa.org.ar</a><a>Secretaría técnica</a><a>Instagram</a><a>LinkedIn</a></div>
+      </div>
+      <div class="bot"><span>© 2026 CAEHFA · Miembro de ADIMRA</span><span>Plataforma desarrollada por <a href="propuesta.html" style="color:#fff;text-decoration:underline">Pinaro — ver propuesta</a></span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ LOGIN ============ -->
+<div id="login" class="view">
+  <div class="login-wrap">
+    <div class="login-art">
+      <h2>Bienvenido al área<br>de socios CAEHFA</h2>
+      <p>Todos los servicios de la cámara, en un solo acceso.</p>
+      <ul>
+        <li><i>💳</i> Pagá tu cuota y gestioná tu membresía</li>
+        <li><i>🤖</i> Consultá normativa con el Asistente IA</li>
+        <li><i>🎓</i> Accedé a cursos y certificados</li>
+        <li><i>🏢</i> Mantené tu perfil en el catálogo</li>
+      </ul>
+    </div>
+    <div class="login-form">
+      <div class="login-card">
+        <h3>Ingresá a tu cuenta</h3>
+        <p class="m">Demo: hacé clic en ingresar para ver el área privada.</p>
+        <div class="field"><label>Email de la empresa</label><input type="email" value="contacto@medix-sa.com.ar" /></div>
+        <div class="field"><label>Contraseña</label><input type="password" value="••••••••••" /></div>
+        <button class="btn btn-primary" onclick="goApp('dash')">Ingresar →</button>
+        <div class="login-foot">¿Tu empresa todavía no es socia? <a onclick="goApp('dash')">Asociate a CAEHFA</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ APP (área privada) ============ -->
+<div id="app" class="view">
+  <div class="app">
+    <aside class="side">
+      <div class="uname"><b>MEDIX S.A.</b><span>Socio activo · desde 2019</span></div>
+      <nav>
+        <a class="sidelink on" data-s="dash" onclick="subApp('dash')"><span class="e">▦</span> Panel</a>
+        <a class="sidelink" data-s="normativo" onclick="subApp('normativo')"><span class="e">📋</span> Centro Normativo</a>
+        <a class="sidelink" data-s="academia" onclick="subApp('academia')"><span class="e">🎓</span> Academia</a>
+        <a class="sidelink" data-s="perfil" onclick="subApp('perfil')"><span class="e">🏢</span> Mi perfil / Catálogo</a>
+        <a class="sidelink" data-s="cuota" onclick="subApp('cuota')"><span class="e">💳</span> Cuota y pagos</a>
+        <a class="sidelink" onclick="go('home')"><span class="e">↩</span> Volver al sitio</a>
+      </nav>
+    </aside>
+    <main class="main">
+
+      <!-- DASH -->
+      <section class="subapp on" id="s-dash">
+        <div class="crumbs">Área de socios / Panel</div>
+        <div class="ptitle">Hola, MEDIX S.A. 👋</div>
+        <div class="quota">
+          <div class="ql"><span>Estado de cuota — Junio 2026</span><b>Al día</b><div class="st"><span class="tag t-ok">● Próximo vencimiento: 10/07/2026</span></div></div>
+          <button class="btn" onclick="subApp('cuota')">Ver pagos →</button>
+        </div>
+        <div class="cards-row">
+          <div class="card"><div class="lab">Cursos en progreso</div><div class="big">2</div><div class="note">Comercio exterior · Sistemas de calidad</div></div>
+          <div class="card"><div class="lab">Alertas normativas nuevas</div><div class="big">3</div><div class="note">En tus categorías de producto</div></div>
+          <div class="card"><div class="lab">Certificados emitidos</div><div class="big">7</div><div class="note">Verificables con QR</div></div>
+        </div>
+        <div class="panel">
+          <div class="ph"><h3>Alertas normativas para tus productos</h3><span class="tag t-new">Tiempo real</span></div>
+          <div class="pb">
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--warn)"></span><div><b>ANMAT — Disp. 4622/2026 actualizada</b><small>Productos para diagnóstico in vitro · publicada hace 2 días</small></div></div><span class="tag t-warn">En revisión</span></div>
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--ok)"></span><div><b>IRAM 17665 — Esterilización por calor</b><small>Nueva versión vigente · aplica a tu rubro</small></div></div><span class="tag t-ok">Vigente</span></div>
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--bad)"></span><div><b>Disp. 2319/02 reemplazada</b><small>Revisá el impacto en tus registros activos</small></div></div><span class="tag t-bad">Derogada</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NORMATIVO -->
+      <section class="subapp" id="s-normativo">
+        <div class="crumbs">Área de socios / Centro Normativo</div>
+        <div class="ptitle">Centro Normativo</div>
+        <div class="norm-grid">
+          <div>
+            <div class="search"><input placeholder="Buscar por palabra clave, número de norma u organismo…" value="esterilización" /><button class="btn btn-primary">Buscar</button></div>
+            <div class="chips"><span class="chip on">Todos</span><span class="chip">ANMAT</span><span class="chip">IRAM</span><span class="chip">MERCOSUR</span><span class="chip">ISO</span><span class="chip">Comercio exterior</span></div>
+            <div class="norm"><div class="nt"><div><h4>Disposición ANMAT 2318/02 (TO 2004)</h4><div class="meta">ANMAT · Registro de Productos Médicos · 2004</div></div><span class="tag t-ok">Vigente</span></div><p>Régimen de registro de productos médicos según clasificación por riesgo. Norma marco para habilitación de fabricantes.</p><div class="acts"><button class="btn btn-ghost btn-sm">📄 Descargar PDF</button><button class="btn btn-ghost btn-sm">🔔 Seguir cambios</button></div></div>
+            <div class="norm"><div class="nt"><div><h4>IRAM 17665-1 — Esterilización por calor húmedo</h4><div class="meta">IRAM · Sistemas de calidad · rev. 2025</div></div><span class="tag t-ok">Vigente</span></div><p>Requisitos para el desarrollo, validación y control de rutina de procesos de esterilización de productos para la salud.</p><div class="acts"><button class="btn btn-ghost btn-sm">📄 Descargar PDF</button><button class="btn btn-ghost btn-sm">🔔 Seguir cambios</button></div></div>
+            <div class="norm"><div class="nt"><div><h4>ISO 13485:2016 — Sistemas de gestión de calidad</h4><div class="meta">ISO · Sistemas de calidad · 2016</div></div><span class="tag t-warn">En revisión</span></div><p>Requisitos para un sistema de gestión de la calidad específico para la industria de productos médicos.</p><div class="acts"><button class="btn btn-ghost btn-sm">📄 Descargar PDF</button><button class="btn btn-ghost btn-sm">🔔 Seguir cambios</button></div></div>
+          </div>
+          <div class="chat">
+            <div class="ch"><div class="av">🤖</div><div><b>Asistente Normativo</b><span>Pregunta en lenguaje natural</span></div></div>
+            <div class="body" id="chatbody">
+              <div class="msg a">Hola 👋 Soy el asistente normativo de CAEHFA. Preguntame qué necesitás registrar o qué norma aplica a tu producto.</div>
+            </div>
+            <div class="suggest">
+              <div class="s" onclick="ask(this)">¿Qué necesito para exportar a Brasil?</div>
+              <div class="s" onclick="ask(this)">Requisitos ISO 13485</div>
+              <div class="s" onclick="ask(this)">Registrar un tensiómetro digital</div>
+            </div>
+            <div class="cf"><input id="chatinput" placeholder="Escribí tu consulta…" onkeydown="if(event.key==='Enter')sendChat()" /><button onclick="sendChat()">↑</button></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACADEMIA -->
+      <section class="subapp" id="s-academia">
+        <div class="crumbs">Área de socios / Academia</div>
+        <div class="ptitle">Academia CAEHFA</div>
+        <div class="certbar">
+          <div class="qr">▣</div>
+          <div><b>Tus certificados digitales</b><p>7 certificados emitidos con QR verificable. Compartilos en LinkedIn o validalos ante terceros con un escaneo.</p></div>
+          <button class="btn btn-teal" style="margin-left:auto">Ver mis certificados</button>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+          <h3 style="font-size:18px;color:var(--navy);font-weight:700">Continuar cursando</h3>
+        </div>
+        <div class="grid g3" style="margin-bottom:34px">
+          <div class="course"><div class="thumb"><span class="ty">EN CURSO · Módulo 3 de 5</span></div><div class="cb"><h4>Comercio exterior para tecnología médica</h4><div class="progress"><i style="width:60%"></i></div><div class="cm"><span>60% completado</span><button class="btn btn-primary btn-sm">Continuar</button></div></div></div>
+          <div class="course"><div class="thumb v2"><span class="ty">EN CURSO · Módulo 1 de 4</span></div><div class="cb"><h4>Sistemas de calidad ISO 13485</h4><div class="progress"><i style="width:22%"></i></div><div class="cm"><span>22% completado</span><button class="btn btn-primary btn-sm">Continuar</button></div></div></div>
+          <div class="course"><div class="thumb v3"><span class="ty">DISPONIBLE</span></div><div class="cb"><h4>Microcurso: Disp. ANMAT 2318/02</h4><div class="desc" style="margin:8px 0 0">Repaso práctico de 45 min sobre registro de productos.</div></div></div>
+        </div>
+        <h3 style="font-size:18px;color:var(--navy);font-weight:700;margin-bottom:18px">Catálogo de cursos</h3>
+        <div class="grid g3">
+          <div class="course"><div class="thumb"><span class="px tag t-new">EN VIVO · Zoom</span><span class="ty">12 AGO · 16hs</span></div><div class="cb"><h4>Novedades regulatorias ANMAT 2026</h4><div class="desc">Cambios normativos del año y su impacto en registros activos.</div><div class="cm"><span class="price">Gratis <small>socios</small></span><button class="btn btn-teal btn-sm">Inscribirme</button></div></div></div>
+          <div class="course"><div class="thumb v2"><span class="ty">ASINCRÓNICO · 6 módulos</span></div><div class="cb"><h4>Habilitación de fabricantes paso a paso</h4><div class="desc">Programa completo con evaluación y certificado final.</div><div class="cm"><span class="price">$45.000 <small>· socios 50%</small></span><button class="btn btn-teal btn-sm">Inscribirme</button></div></div></div>
+          <div class="course"><div class="thumb v3"><span class="ty">ASINCRÓNICO · 4 módulos</span></div><div class="cb"><h4>Licitaciones públicas: cómo presentarse</h4><div class="desc">Lectura de pliegos, requisitos y armado de ofertas.</div><div class="cm"><span class="price">$38.000 <small>· socios 50%</small></span><button class="btn btn-teal btn-sm">Inscribirme</button></div></div></div>
+        </div>
+      </section>
+
+      <!-- PERFIL -->
+      <section class="subapp" id="s-perfil">
+        <div class="crumbs">Área de socios / Mi perfil</div>
+        <div class="ptitle">Perfil de empresa — Catálogo</div>
+        <div class="panel" style="margin-bottom:20px">
+          <div class="ph"><h3>MEDIX S.A.</h3><span class="tag t-new">Visible públicamente</span></div>
+          <div style="padding:22px;display:grid;gap:16px">
+            <div class="field"><label>Productos que fabrica</label><input value="Ventiladores mecánicos, monitores multiparamétricos, bombas de infusión" /></div>
+            <div class="grid g2">
+              <div class="field"><label>Certificaciones</label><input value="ISO 13485, ANMAT, IRAM" /></div>
+              <div class="field"><label>Mercados de exportación</label><input value="Brasil, Chile, Paraguay, Uruguay" /></div>
+            </div>
+            <div class="grid g2">
+              <div class="field"><label>Provincia</label><input value="Buenos Aires" /></div>
+              <div class="field"><label>Capacidad productiva</label><input value="Media-alta · 3 plantas" /></div>
+            </div>
+            <button class="btn btn-primary" style="width:fit-content">Guardar cambios</button>
+          </div>
+        </div>
+        <p class="sub">Tu perfil es visible para compradores hospitalarios, organismos del Estado y licitantes que buscan proveedores. Mantenerlo actualizado genera oportunidades de negocio.</p>
+      </section>
+
+      <!-- CUOTA -->
+      <section class="subapp" id="s-cuota">
+        <div class="crumbs">Área de socios / Cuota y pagos</div>
+        <div class="ptitle">Cuota y pagos</div>
+        <div class="quota">
+          <div class="ql"><span>Cuota societaria mensual</span><b>$ 95.000</b><div class="st"><span class="tag t-ok">● Próximo vencimiento: 10/07/2026</span></div></div>
+          <button class="btn">💳 Pagar con Mercado Pago</button>
+        </div>
+        <div class="panel">
+          <div class="ph"><h3>Historial de pagos</h3><button class="btn btn-ghost btn-sm">Descargar comprobantes</button></div>
+          <div class="pb">
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--ok)"></span><div><b>Junio 2026</b><small>Pagado el 09/06 · Mercado Pago</small></div></div><span><b>$95.000</b> &nbsp;<span class="tag t-ok">Pagado</span></span></div>
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--ok)"></span><div><b>Mayo 2026</b><small>Pagado el 08/05 · Transferencia</small></div></div><span><b>$95.000</b> &nbsp;<span class="tag t-ok">Pagado</span></span></div>
+            <div class="row"><div class="ri"><span class="dot" style="background:var(--ok)"></span><div><b>Abril 2026</b><small>Pagado el 10/04 · Mercado Pago</small></div></div><span><b>$95.000</b> &nbsp;<span class="tag t-ok">Pagado</span></span></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script>
+function go(v){document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));document.getElementById(v).classList.add('active');window.scrollTo(0,0)}
+function goApp(sub){go('app');subApp(sub)}
+function subApp(s){
+  document.querySelectorAll('.subapp').forEach(e=>e.classList.remove('on'));
+  var el=document.getElementById('s-'+s); if(el)el.classList.add('on');
+  document.querySelectorAll('.sidelink').forEach(a=>a.classList.toggle('on',a.dataset.s===s));
+  document.querySelector('.main').scrollTo(0,0);window.scrollTo(0,0);
+}
+// chips
+document.addEventListener('click',e=>{if(e.target.classList.contains('chip')){e.target.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));e.target.classList.add('on')}});
+
+// chat demo
+var answers={
+  'exportar a brasil':'Para exportar a Brasil necesitás el registro en <b>ANVISA</b> (equivalente brasileño a ANMAT). El <b>MERCOSUR</b> tiene acuerdos de reconocimiento parcial: contar con registro ANMAT vigente + ISO 13485 facilita el trámite. Te conviene también la <b>GMP brasileña</b> según la clase de riesgo del producto.|📄 Resolución GMC MERCOSUR 20/11|📄 ANVISA RDC 751/2022',
+  'iso 13485':'<b>ISO 13485:2016</b> establece los requisitos de un sistema de gestión de calidad para productos médicos. Cubre control de diseño, gestión de riesgos, trazabilidad y vigilancia post-comercialización. Es requisito de hecho para registrar ante ANMAT y exportar.|📄 ISO 13485:2016 — texto de referencia|📄 Guía CAEHFA de implementación',
+  'registrar un tensiómetro digital':'Un tensiómetro digital es generalmente <b>Clase II (riesgo moderado)</b>. Requiere: habilitación del establecimiento, legajo técnico, ensayos de seguridad eléctrica (IRAM IEC 60601) y registro ante ANMAT (Disp. 2318/02).|📄 IRAM IEC 60601-1 — Seguridad eléctrica|📄 Disposición ANMAT 2318/02',
+  'default':'Encontré normativa relacionada en el repositorio. Esto es un mockup: en la versión final, el asistente busca en el corpus normativo indexado y responde citando el documento oficial. Si la consulta requiere interpretación, deriva a la secretaría técnica con tu contexto.|📄 Documento relacionado 1|📄 Documento relacionado 2'
+};
+function pushMsg(html,who){var b=document.getElementById('chatbody');var d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;b.appendChild(d);b.scrollTop=b.scrollHeight;return d;}
+function reply(q){
+  var key=Object.keys(answers).find(k=>k!=='default'&&q.toLowerCase().includes(k))||'default';
+  var parts=answers[key].split('|');
+  var cite='<div class="cite">'+parts.slice(1).map(c=>'<a>'+c+'</a>').join('')+'</div>';
+  setTimeout(()=>pushMsg(parts[0]+cite,'a'),450);
+}
+function ask(el){pushMsg(el.textContent,'u');reply(el.textContent);}
+function sendChat(){var i=document.getElementById('chatinput');if(!i.value.trim())return;pushMsg(i.value,'u');reply(i.value);i.value='';}
+</script>
+</body>
+</html>
