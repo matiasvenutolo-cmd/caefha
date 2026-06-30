@@ -114,6 +114,11 @@ footer a{color:var(--ink);font-weight:500}
   .phase,.card,.pricebox,.roi,.two,.inc{break-inside:avoid}
   .road{break-inside:auto}
   a[href]{text-decoration:none}
+  /* el texto con degradado se rellena como bloque en PDF: color sólido de respaldo */
+  .gradient-text{background:none !important;-webkit-text-fill-color:#7C3AED !important;color:#7C3AED !important}
+  /* ocultar los blobs decorativos difuminados que en PDF aparecen como manchas */
+  .hero:before,.pricebox:before{display:none !important}
+  .pricebox{background:#0A0A0A !important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
@@ -133,9 +138,9 @@ footer a{color:var(--ink);font-weight:500}
 </div></div>
 
 <div class="hero"><div class="wrap">
-  <span class="tagchip">● Propuesta comercial · Plataforma digital de socios</span>
-  <h1>De cámara a <span class="gradient-text">plataforma de servicios</span> para CAEHFA.</h1>
-  <p>Una plataforma que CAEHFA usa todos los días, que monetiza la relación con los socios y que crece mes a mes. Bajo un abono fijo, sin desembolso inicial.</p>
+  <span class="tagchip">● Propuesta comercial · Web renovada + plataforma de socios</span>
+  <h1>Tu web renovada y una <span class="gradient-text">plataforma de servicios</span> para CAEHFA.</h1>
+  <p>Renovamos el sitio que CAEHFA ya tiene y le sumamos una plataforma que el socio usa todos los días, que monetiza la relación y que crece mes a mes. Bajo un abono fijo, sin desembolso inicial.</p>
 </div></div>
 
 <!-- contexto -->
@@ -152,9 +157,23 @@ footer a{color:var(--ink);font-weight:500}
 <!-- que construimos -->
 <section><div class="wrap">
   <div class="eyebrow"><span class="num">02</span><span class="kicker">Qué construimos</span></div>
-  <h2>Seis módulos que se retroalimentan.</h2>
-  <p class="lead">El login permite saber quién usa qué · los pagos monetizan el contenido · el asistente IA genera leads para la secretaría · el observatorio posiciona a CAEHFA como referente · el directorio atrae tráfico externo que refuerza el valor de ser socio.</p>
-  <div class="inc">
+  <h2>Tu web renovada, más una plataforma de socios.</h2>
+  <p class="lead">Trabajamos en dos capas. Primero renovamos el sitio que CAEHFA ya tiene —su identidad, su contenido, su navegación—. Sobre esa base, sumamos los servicios que lo convierten en una plataforma que el socio usa cada semana.</p>
+
+  <div class="two" style="margin-top:30px">
+    <div class="card after" style="border-left-color:var(--cyan)">
+      <span class="lab" style="color:var(--cyan)">Capa 1 · incluida en el abono</span>
+      <h3>Tu sitio institucional, renovado</h3>
+      <p>Rediseño completo de caehfa.org.ar respetando su identidad: sus secciones actuales, novedades, catálogo de empresas, observatorio y academia. Más moderno, más rápido y pensado para el celular.</p>
+    </div>
+    <div class="card after">
+      <span class="lab">Capa 2 · el diferencial</span>
+      <h3>La plataforma de socios</h3>
+      <p>Lo que hoy no existe y monetiza la relación: área privada, pagos, capacitación, normativa y un asistente con IA. Estos seis módulos:</p>
+    </div>
+  </div>
+
+  <div class="inc" style="margin-top:26px">
     <div><span class="ck">→</span><div><b>Área privada + login de socios</b> — estado de cuota, perfil editable, panel personalizado.</div></div>
     <div><span class="ck">→</span><div><b>Pagos online (Mercado Pago)</b> — cuotas y cursos en el mismo flujo, comprobantes automáticos.</div></div>
     <div><span class="ck">→</span><div><b>Academia real</b> — inscripción, pago, grabaciones, materiales y certificados con QR.</div></div>
