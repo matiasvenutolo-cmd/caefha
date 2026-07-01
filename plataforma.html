@@ -246,11 +246,48 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
   .chat{position:static;min-width:0}
   footer .cols{grid-template-columns:1fr 1fr}
 }
+
+/* ===== Landings públicas ===== */
+.lhead{padding:52px 0 44px;background:linear-gradient(180deg,var(--wash),#fff);border-bottom:1px solid var(--border)}
+.sep-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:26px}
+.ctaband{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:16px;padding:40px;text-align:center;box-shadow:var(--shadow)}
+.ctaband h3{font-size:25px;font-weight:800;letter-spacing:-.02em}
+.ctaband p{color:#ecdcde;max-width:540px;margin:10px auto 22px;font-size:15.5px}
+.btn-white{background:#fff;color:var(--navy);font-weight:700}
+.backbar{border-top:1px solid var(--border);background:var(--paper);padding:18px 0}
+.backbar a{color:var(--blue);font-weight:700;font-size:14px;cursor:pointer}
+.comp{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.18s;cursor:pointer}
+.comp:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(16,38,64,.1);border-color:var(--blue)}
+.comp .mono{width:44px;height:44px;border-radius:10px;background:var(--wash);display:grid;place-items:center;font-weight:800;color:var(--blue);font-size:16px;margin-bottom:12px}
+.comp h4{font-size:16px;font-weight:800;color:var(--navy)}
+.comp .pr{font-size:13px;color:var(--mute);margin-top:4px}
+.comp .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+.comp .badges span{font-size:11px;font-weight:600;background:var(--wash);border:1px solid var(--border);border-radius:100px;padding:3px 9px;color:var(--mute)}
+.cdetail{display:grid;grid-template-columns:1.4fr .9fr;gap:28px;align-items:start}
+.cvideo{aspect-ratio:16/9;border-radius:var(--radius);background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;box-shadow:var(--shadow);cursor:pointer}
+.cvideo .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:24px;color:var(--blue)}
+.mod{display:flex;align-items:center;gap:13px;padding:13px 16px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--paper);margin-bottom:10px}
+.mod .mn{width:30px;height:30px;border-radius:8px;background:var(--wash);display:grid;place-items:center;font-weight:800;color:var(--blue);font-size:13px;flex-shrink:0}
+.mod b{font-size:14.5px;color:var(--navy);font-weight:700}.mod small{color:var(--soft);font-size:12.5px;display:block}
+.mod .lock{margin-left:auto;color:var(--soft);font-size:13px}
+.ficha{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);position:sticky;top:120px}
+.ficha .row2{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px}
+.ficha .row2:last-of-type{border-bottom:none}.ficha .row2 b{color:var(--navy)}
+.obsgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.obscard{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.obscard .lab{font-size:11.5px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+.obscard .big{font-size:25px;font-weight:800;color:var(--navy);margin-top:6px;letter-spacing:-.02em}
+.obscard .tr{font-size:12.5px;font-weight:700;margin-top:4px}
+.up{color:var(--ok)}.down{color:var(--bad)}
+.bars{display:flex;align-items:flex-end;gap:12px;height:170px;padding:14px 0 26px;border-bottom:1px solid var(--border)}
+.bars .bar{flex:1;background:linear-gradient(180deg,var(--blue),var(--navy));border-radius:6px 6px 0 0;position:relative;min-width:0}
+.bars .bar span{position:absolute;bottom:-24px;left:0;right:0;text-align:center;font-size:11px;color:var(--soft)}
+@media(max-width:900px){.cdetail{grid-template-columns:1fr}.ficha{position:static}.obsgrid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 
-<div class="demobar">💡 <b>PROPUESTA PINARO — Plataforma de socios</b> · Demo de lo que CAEHFA podría sumar a su web · <a href="index.html" style="color:#fff;text-decoration:underline">Ver la web renovada</a></div>
+<div class="demobar">🔵 <b>PLATAFORMA CAEHFA</b> · Demo navegable · <a href="index.html" style="color:#fff;text-decoration:underline">Volver a la web institucional</a></div>
 
 <!-- ============ HEADER ============ -->
 <header>
@@ -259,11 +296,11 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
       <img class="logo-img" src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/cropped-CAEHFA-ADIMRA-TOP-2.png" alt="CAEHFA — Cámara de Equipamiento Hospitalario de Fabricación Argentina" />
     </div>
     <div class="links">
-      <a onclick="go('home')">Institucional</a>
-      <a onclick="go('home')">Catálogo de Socios</a>
-      <a onclick="goApp('normativo')">Centro Normativo</a>
-      <a onclick="goApp('academia')">Academia</a>
-      <a onclick="go('home')">Observatorio</a>
+      <a onclick="go('home')">Inicio</a>
+      <a onclick="go('v-catalogo')">Catálogo de Socios</a>
+      <a onclick="go('v-normativo')">Centro Normativo</a>
+      <a onclick="go('v-academia')">Academia</a>
+      <a onclick="go('v-observatorio')">Observatorio</a>
     </div>
     <div class="spacer"></div>
     <button class="btn btn-ghost btn-sm" onclick="go('login')">Acceso Socios</button>
@@ -280,13 +317,42 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
       <p class="lead">Normativa, capacitación, catálogo y oportunidades de negocio. CAEHFA evoluciona de cámara a plataforma que trabaja para vos todos los días.</p>
       <div class="cta-row">
         <button class="btn btn-primary" onclick="go('login')">Ingresar al área de socios →</button>
-        <button class="btn btn-out" onclick="goApp('normativo')">Probar el Asistente Normativo</button>
+        <button class="btn btn-out" onclick="go('v-academia')">Conocé nuestras capacitaciones</button>
       </div>
       <div class="stats">
         <div class="s"><b>+400</b><span>empresas asociadas</span></div>
         <div class="s"><b>+4.500</b><span>empleos directos</span></div>
         <div class="s"><b>+15.000</b><span>empleos indirectos</span></div>
         <div class="s"><b>24/7</b><span>acceso a servicios</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Separador visual: Academia + Catálogo -->
+  <section class="block" style="padding:64px 0 18px">
+    <div class="wrap">
+      <div class="sep-head">
+        <div><span class="kick">Academia CAEHFA</span><h2 class="h2" style="font-size:27px;margin-bottom:0">Capacitaciones para todo el sector salud</h2></div>
+        <button class="btn btn-primary" onclick="go('v-academia')">Ingresar a la Academia →</button>
+      </div>
+      <div class="grid g3">
+        <div class="course" onclick="openCurso('Novedades regulatorias ANMAT 2026','Los cambios normativos del año y su impacto en registros activos.','En vivo · Zoom · 12 AGO','Gratis para socios')"><div class="thumb"><span class="ty">EN VIVO · 12 AGO</span></div><div class="cb"><h4>Novedades regulatorias ANMAT 2026</h4><div class="cm" style="margin-top:12px"><span class="price">Gratis <small>socios</small></span><span class="more">Ver curso →</span></div></div></div>
+        <div class="course" onclick="openCurso('Habilitación de fabricantes paso a paso','Programa completo con evaluación y certificado digital final.','Asincrónico · 6 módulos','$45.000 · socios 50%')"><div class="thumb v2"><span class="ty">ASINCRÓNICO · 6 módulos</span></div><div class="cb"><h4>Habilitación de fabricantes paso a paso</h4><div class="cm" style="margin-top:12px"><span class="price">$45.000</span><span class="more">Ver curso →</span></div></div></div>
+        <div class="course" onclick="openCurso('Uso y mantenimiento de equipamiento médico','Buenas prácticas de operación y mantenimiento de equipos. Abierto a todo el sector salud.','Asincrónico · 4 módulos','$32.000')"><div class="thumb v3"><span class="ty">ABIERTO AL SECTOR</span></div><div class="cb"><h4>Uso y mantenimiento de equipamiento médico</h4><div class="cm" style="margin-top:12px"><span class="price">$32.000</span><span class="more">Ver curso →</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding:34px 0 18px">
+    <div class="wrap">
+      <div class="sep-head">
+        <div><span class="kick">Catálogo de Socios</span><h2 class="h2" style="font-size:27px;margin-bottom:0">Empresas fabricantes nacionales</h2></div>
+        <button class="btn btn-primary" onclick="go('v-catalogo')">Ingresar al catálogo →</button>
+      </div>
+      <div class="grid g3">
+        <div class="comp" onclick="go('v-catalogo')"><div class="mono">MX</div><h4>MEDIX S.A.</h4><div class="pr">Ventiladores, monitores, bombas de infusión</div><div class="badges"><span>ISO 13485</span><span>ANMAT</span><span>Exporta</span></div></div>
+        <div class="comp" onclick="go('v-catalogo')"><div class="mono">TN</div><h4>Tecnomed Argentina</h4><div class="pr">Esterilización y equipamiento quirúrgico</div><div class="badges"><span>IRAM</span><span>ANMAT</span><span>Bs. As.</span></div></div>
+        <div class="comp" onclick="go('v-catalogo')"><div class="mono">BS</div><h4>BioSanitas</h4><div class="pr">Insumos y descartables hospitalarios</div><div class="badges"><span>ISO 13485</span><span>Córdoba</span></div></div>
       </div>
     </div>
   </section>
@@ -302,32 +368,32 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
         <div class="feat" onclick="go('login')">
           <div class="ic">🔐</div><h3>Área privada de socios</h3>
           <p>Estado de cuota, pago online, perfil de empresa editable y panel personalizado al ingresar.</p>
-          <span class="more">Ver demo →</span>
+          <span class="more">Ingresar →</span>
         </div>
-        <div class="feat" onclick="goApp('normativo')">
-          <div class="ic">🤖</div><h3>Asistente Normativo IA</h3>
-          <p>Preguntá en lenguaje natural sobre ANMAT, IRAM o MERCOSUR. Respuesta inmediata citando la fuente oficial.</p>
-          <span class="more">Probar ahora →</span>
+        <div class="feat" onclick="go('v-academia')">
+          <div class="ic">🎓</div><h3>Academia CAEHFA</h3>
+          <p>Cursos con inscripción y pago online, grabaciones, materiales y certificados digitales con QR verificable.</p>
+          <span class="more">Ver capacitaciones →</span>
         </div>
-        <div class="feat" onclick="goApp('normativo')">
+        <div class="feat" onclick="go('v-catalogo')">
+          <div class="ic">🏢</div><h3>Catálogo de Socios</h3>
+          <p>Perfil enriquecido por empresa visible para compradores hospitalarios y licitantes. Tráfico externo con valor directo.</p>
+          <span class="more">Ver catálogo →</span>
+        </div>
+        <div class="feat" onclick="go('v-normativo')">
           <div class="ic">📋</div><h3>Centro Normativo</h3>
           <p>Repositorio organizado por organismo y producto, con buscador y alertas cuando cambia una norma que te afecta.</p>
           <span class="more">Explorar →</span>
         </div>
-        <div class="feat" onclick="goApp('academia')">
-          <div class="ic">🎓</div><h3>Academia CAEHFA</h3>
-          <p>Cursos con inscripción y pago online, grabaciones, materiales y certificados digitales con QR verificable.</p>
-          <span class="more">Ver catálogo →</span>
-        </div>
-        <div class="feat" onclick="go('login')">
-          <div class="ic">🏢</div><h3>Directorio Inteligente</h3>
-          <p>Perfil enriquecido por empresa visible para compradores hospitalarios y licitantes. Tráfico externo con valor directo.</p>
-          <span class="more">Ver demo →</span>
-        </div>
-        <div class="feat" onclick="go('login')">
+        <div class="feat" onclick="go('v-observatorio')">
           <div class="ic">📊</div><h3>Observatorio del Sector</h3>
           <p>Dashboard con exportaciones, habilitaciones ANMAT y empleo. Resúmenes de noticias generados con IA.</p>
-          <span class="more">Ver demo →</span>
+          <span class="more">Ver observatorio →</span>
+        </div>
+        <div class="feat" onclick="go('v-normativo')">
+          <div class="ic">🤖</div><h3>Asistente Normativo IA</h3>
+          <p>Preguntá en lenguaje natural sobre ANMAT, IRAM o MERCOSUR. Respuesta inmediata citando la fuente oficial.</p>
+          <span class="more">Conocer →</span>
         </div>
       </div>
     </div>
@@ -367,13 +433,160 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
           <img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/CAEHFA-pie-small.png" alt="CAEHFA" style="height:50px;background:#fff;padding:7px 10px;border-radius:7px;margin-bottom:14px" />
           <p style="font-size:13.5px;max-width:300px">Cámara de Equipamiento Hospitalario de Fabricación Argentina. Representamos desde 1976 a la industria nacional de tecnología médico-hospitalaria.</p>
         </div>
-        <div><h4>Plataforma</h4><a onclick="go('login')">Área de socios</a><a onclick="goApp('normativo')">Centro Normativo</a><a onclick="goApp('academia')">Academia</a><a onclick="go('home')">Observatorio</a></div>
+        <div><h4>Plataforma</h4><a onclick="go('login')">Área de socios</a><a onclick="go('v-normativo')">Centro Normativo</a><a onclick="go('v-academia')">Academia</a><a onclick="go('v-catalogo')">Catálogo de Socios</a><a onclick="go('v-observatorio')">Observatorio</a></div>
         <div><h4>Institucional</h4><a>Quiénes somos</a><a>Autoridades</a><a>Cadena de valor</a><a>Internacionalización</a></div>
         <div><h4>Contacto</h4><a>info@caehfa.org.ar</a><a>Secretaría técnica</a><a>Instagram</a><a>LinkedIn</a></div>
       </div>
       <div class="bot"><span>© 2026 CAEHFA · Miembro de ADIMRA</span><span>Plataforma desarrollada por <a href="propuesta.html" style="color:#fff;text-decoration:underline">Pinaro — ver propuesta</a></span></div>
     </div>
   </footer>
+</div>
+
+<!-- ============ LANDING: ACADEMIA ============ -->
+<div id="v-academia" class="view">
+  <section class="lhead"><div class="wrap center">
+    <span class="kick">Academia CAEHFA</span>
+    <h2 class="h2">Capacitación para todo el sector de la salud</h2>
+    <p class="sub" style="margin:0 auto">Cursos sobre normativa, calidad, comercio exterior y gestión hospitalaria. Abiertos a socios y a todo el sector salud/equipamiento médico, con inscripción y pago online y certificados digitales verificables por QR.</p>
+  </div></section>
+  <section class="block" style="padding:52px 0"><div class="wrap">
+    <div class="sep-head"><div><span class="kick">Próximos cursos</span><h3 style="font-size:22px;color:var(--navy);font-weight:800;margin-top:6px">Catálogo de capacitaciones</h3></div></div>
+    <div class="grid g3">
+      <div class="course" onclick="openCurso('Novedades regulatorias ANMAT 2026','Los cambios normativos del año y su impacto en registros activos.','En vivo · Zoom · 12 AGO','Gratis para socios')"><div class="thumb"><span class="ty">EN VIVO · 12 AGO</span></div><div class="cb"><h4>Novedades regulatorias ANMAT 2026</h4><div class="desc">Cambios del año y su impacto en registros activos.</div><div class="cm"><span class="price">Gratis <small>socios</small></span><span class="more">Ver curso →</span></div></div></div>
+      <div class="course" onclick="openCurso('Habilitación de fabricantes paso a paso','Programa completo con evaluación y certificado digital final.','Asincrónico · 6 módulos','$45.000 · socios 50%')"><div class="thumb v2"><span class="ty">ASINCRÓNICO · 6 módulos</span></div><div class="cb"><h4>Habilitación de fabricantes paso a paso</h4><div class="desc">De la habilitación de empresa al registro de producto.</div><div class="cm"><span class="price">$45.000 <small>· socios 50%</small></span><span class="more">Ver curso →</span></div></div></div>
+      <div class="course" onclick="openCurso('Sistemas de calidad ISO 13485','Implementación práctica del sistema de gestión de calidad.','Asincrónico · 5 módulos','$40.000 · socios 50%')"><div class="thumb v2"><span class="ty">ASINCRÓNICO · 5 módulos</span></div><div class="cb"><h4>Sistemas de calidad ISO 13485</h4><div class="desc">Diseño, riesgos, trazabilidad y vigilancia.</div><div class="cm"><span class="price">$40.000</span><span class="more">Ver curso →</span></div></div></div>
+      <div class="course" onclick="openCurso('Uso y mantenimiento de equipamiento médico','Buenas prácticas de operación y mantenimiento de equipos. Abierto a todo el sector salud.','Asincrónico · 4 módulos','$32.000')"><div class="thumb v3"><span class="ty">ABIERTO AL SECTOR</span></div><div class="cb"><h4>Uso y mantenimiento de equipamiento médico</h4><div class="desc">Para hospitales, clínicas y servicios técnicos.</div><div class="cm"><span class="price">$32.000</span><span class="more">Ver curso →</span></div></div></div>
+      <div class="course" onclick="openCurso('Higiene y buenas prácticas en quirófano','Protocolos de higiene y seguridad en operaciones. Abierto a todo el sector salud.','Asincrónico · 3 módulos','$28.000')"><div class="thumb v3"><span class="ty">ABIERTO AL SECTOR</span></div><div class="cb"><h4>Higiene y buenas prácticas en quirófano</h4><div class="desc">Protocolos de higiene y seguridad en operaciones.</div><div class="cm"><span class="price">$28.000</span><span class="more">Ver curso →</span></div></div></div>
+      <div class="course" onclick="openCurso('Licitaciones públicas: cómo presentarse','Lectura de pliegos, requisitos y armado de ofertas.','Asincrónico · 4 módulos','$38.000 · socios 50%')"><div class="thumb"><span class="ty">ASINCRÓNICO · 4 módulos</span></div><div class="cb"><h4>Licitaciones públicas: cómo presentarse</h4><div class="desc">Lectura de pliegos, requisitos y armado de ofertas.</div><div class="cm"><span class="price">$38.000</span><span class="more">Ver curso →</span></div></div></div>
+    </div>
+    <div class="ctaband" style="margin-top:44px">
+      <h3>¿Querés probar la Academia completa?</h3>
+      <p>Inscripción, pago online, seguimiento de progreso y certificados con QR verificable, todo desde el área de socios. Los cursos abiertos al sector son, además, una fuente de ingresos y un canal de nuevos socios para la cámara.</p>
+      <button class="btn btn-white" onclick="goApp('academia')">Quiero probarlo →</button>
+    </div>
+  </div></section>
+  <div class="backbar"><div class="wrap"><a onclick="go('home')">← Volver al inicio de la plataforma</a></div></div>
+</div>
+
+<!-- ============ LANDING: DETALLE DE CURSO (vidriera) ============ -->
+<div id="v-curso" class="view">
+  <section class="lhead"><div class="wrap">
+    <div class="crumbs" style="font-size:13px;color:var(--soft);margin-bottom:8px">Academia / <span onclick="go('v-academia')" style="cursor:pointer;color:var(--blue)">Cursos</span> / Detalle</div>
+    <h2 class="h2" id="curso-title" style="margin-top:0">Curso</h2>
+    <p class="sub" id="curso-desc">Descripción del curso.</p>
+    <div class="chips" style="margin-top:16px"><span class="chip on" id="curso-mod">Modalidad</span><span class="chip" id="curso-price">Precio</span><span class="chip">Certificado con QR</span></div>
+  </div></section>
+  <section class="block" style="padding:48px 0"><div class="wrap">
+    <div class="cdetail">
+      <div>
+        <div class="cvideo" onclick="alert('Demo: acá iría el video de introducción del curso.')"><div class="play">▶</div></div>
+        <h3 style="font-size:20px;color:var(--navy);font-weight:800;margin:26px 0 14px">Contenido del curso</h3>
+        <div class="mod"><span class="mn">1</span><div><b>Introducción y marco normativo</b><small>Video · 12 min · vista previa disponible</small></div><span class="lock">👁 Vista previa</span></div>
+        <div class="mod"><span class="mn">2</span><div><b>Requisitos y documentación</b><small>Video + material descargable</small></div><span class="lock">🔒</span></div>
+        <div class="mod"><span class="mn">3</span><div><b>Proceso paso a paso</b><small>Video · ejercicios prácticos</small></div><span class="lock">🔒</span></div>
+        <div class="mod"><span class="mn">4</span><div><b>Casos reales y cierre</b><small>Video + evaluación final</small></div><span class="lock">🔒</span></div>
+        <p class="sub" style="margin-top:16px;font-size:14px">Estás viendo la <b>vidriera pública</b> del curso. Para acceder al contenido completo, inscribite desde el área de socios.</p>
+      </div>
+      <div class="ficha">
+        <h3 style="font-size:17px;color:var(--navy);font-weight:800;margin-bottom:14px">Ficha del curso</h3>
+        <div class="row2"><span>Modalidad</span><b id="ficha-mod">—</b></div>
+        <div class="row2"><span>Duración</span><b>≈ 4 semanas</b></div>
+        <div class="row2"><span>Certificado</span><b>Digital · QR</b></div>
+        <div class="row2"><span>Precio</span><b id="ficha-price">—</b></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px" onclick="goApp('academia')">Quiero probarlo →</button>
+        <p style="font-size:12.5px;color:var(--soft);text-align:center;margin-top:10px">Inscripción y pago desde el área de socios</p>
+      </div>
+    </div>
+  </div></section>
+  <div class="backbar"><div class="wrap"><a onclick="go('v-academia')">← Volver a la Academia</a></div></div>
+</div>
+
+<!-- ============ LANDING: CENTRO NORMATIVO ============ -->
+<div id="v-normativo" class="view">
+  <section class="lhead"><div class="wrap center">
+    <span class="kick">Centro Normativo</span>
+    <h2 class="h2">Toda la normativa del sector, ordenada y al día</h2>
+    <p class="sub" style="margin:0 auto">Repositorio por organismo (ANMAT, IRAM, MERCOSUR, ISO) y por producto, con buscador, estado de vigencia y alertas automáticas. Y un asistente con IA que responde en lenguaje natural citando la fuente oficial.</p>
+  </div></section>
+  <section class="block" style="padding:52px 0"><div class="wrap">
+    <div class="grid g3">
+      <div class="feat"><div class="ic">📚</div><h3>Repositorio organizado</h3><p>Normas por organismo y tipo, con indicador de vigente / en revisión / derogada y descarga del documento oficial.</p></div>
+      <div class="feat"><div class="ic">🔔</div><h3>Alertas automáticas</h3><p>Avisos por email cuando cambia una norma en las categorías de producto que el socio opera.</p></div>
+      <div class="feat"><div class="ic">🤖</div><h3>Asistente Normativo IA</h3><p>Preguntá en lenguaje natural y obtené la respuesta citando la fuente. Los casos complejos derivan a la secretaría técnica.</p></div>
+    </div>
+    <div class="ctaband" style="margin-top:44px">
+      <h3>Probá el Centro Normativo y el Asistente IA</h3>
+      <p>Buscá normas, seguí sus cambios y consultá al asistente desde el área de socios.</p>
+      <button class="btn btn-white" onclick="goApp('normativo')">Quiero probarlo →</button>
+    </div>
+  </div></section>
+  <div class="backbar"><div class="wrap"><a onclick="go('home')">← Volver al inicio de la plataforma</a></div></div>
+</div>
+
+<!-- ============ LANDING: OBSERVATORIO ============ -->
+<div id="v-observatorio" class="view">
+  <section class="lhead"><div class="wrap center">
+    <span class="kick">Observatorio del Sector</span>
+    <h2 class="h2">El pulso de la industria, en un panel</h2>
+    <p class="sub" style="margin:0 auto">Exportaciones e importaciones de tecnología médica, habilitaciones ANMAT activas y empleo del sector, con resúmenes de noticias generados por IA e informes descargables.</p>
+  </div></section>
+  <section class="block" style="padding:52px 0"><div class="wrap">
+    <div class="obsgrid">
+      <div class="obscard"><div class="lab">Exportaciones 2026</div><div class="big">USD 128 M</div><div class="tr up">▲ 9,4% i.a.</div></div>
+      <div class="obscard"><div class="lab">Importaciones 2026</div><div class="big">USD 342 M</div><div class="tr down">▼ 3,1% i.a.</div></div>
+      <div class="obscard"><div class="lab">Habilitaciones ANMAT</div><div class="big">1.240</div><div class="tr up">▲ activas</div></div>
+      <div class="obscard"><div class="lab">Empleo del sector</div><div class="big">+4.500</div><div class="tr">directos</div></div>
+    </div>
+    <div class="panel" style="margin-top:24px"><div class="ph"><h3>Exportaciones por trimestre (USD M)</h3><span class="tag t-new">2025–2026</span></div>
+      <div style="padding:8px 28px 30px">
+        <div class="bars">
+          <div class="bar" style="height:52%"><span>1T25</span></div>
+          <div class="bar" style="height:64%"><span>2T25</span></div>
+          <div class="bar" style="height:58%"><span>3T25</span></div>
+          <div class="bar" style="height:72%"><span>4T25</span></div>
+          <div class="bar" style="height:80%"><span>1T26</span></div>
+          <div class="bar" style="height:92%"><span>2T26</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+      <div class="feat"><div class="ic">📰</div><h3>Resúmenes con IA</h3><p>Síntesis semanal de noticias del sector: comercio exterior, regulación y coyuntura, generada automáticamente.</p></div>
+      <div class="feat"><div class="ic">📑</div><h3>Informes descargables</h3><p>Reportes periódicos con la evolución del sector para usar en presentaciones y gestiones institucionales.</p></div>
+    </div>
+    <div class="ctaband" style="margin-top:44px">
+      <h3>Accedé al Observatorio completo</h3>
+      <p>Indicadores actualizados, series históricas e informes, disponibles para los socios de CAEHFA.</p>
+      <button class="btn btn-white" onclick="go('login')">Ingresar como socio →</button>
+    </div>
+  </div></section>
+  <div class="backbar"><div class="wrap"><a onclick="go('home')">← Volver al inicio de la plataforma</a></div></div>
+</div>
+
+<!-- ============ LANDING: CATÁLOGO DE SOCIOS ============ -->
+<div id="v-catalogo" class="view">
+  <section class="lhead"><div class="wrap center">
+    <span class="kick">Catálogo de Socios</span>
+    <h2 class="h2">Proveedores nacionales de tecnología médica</h2>
+    <p class="sub" style="margin:0 auto">El directorio de empresas fabricantes: productos, certificaciones y mercados. Visible para compradores hospitalarios, organismos del Estado y licitantes, generando tráfico externo con valor directo para el socio.</p>
+  </div></section>
+  <section class="block" style="padding:48px 0"><div class="wrap">
+    <div class="search" style="max-width:640px;margin:0 auto 18px"><input placeholder="Buscar por producto, certificación o provincia…" value="ventiladores" /><button class="btn btn-primary">Buscar</button></div>
+    <div class="chips" style="justify-content:center"><span class="chip on">Todos</span><span class="chip">ISO 13485</span><span class="chip">ANMAT</span><span class="chip">Exportadores</span><span class="chip">Buenos Aires</span><span class="chip">Córdoba</span></div>
+    <div class="grid g3" style="margin-top:22px">
+      <div class="comp"><div class="mono">MX</div><h4>MEDIX S.A.</h4><div class="pr">Ventiladores mecánicos, monitores multiparamétricos, bombas de infusión</div><div class="badges"><span>ISO 13485</span><span>ANMAT</span><span>Exporta a 4 países</span><span>Buenos Aires</span></div></div>
+      <div class="comp"><div class="mono">TN</div><h4>Tecnomed Argentina</h4><div class="pr">Autoclaves, esterilización y equipamiento quirúrgico</div><div class="badges"><span>IRAM</span><span>ANMAT</span><span>Buenos Aires</span></div></div>
+      <div class="comp"><div class="mono">BS</div><h4>BioSanitas</h4><div class="pr">Insumos y descartables hospitalarios</div><div class="badges"><span>ISO 13485</span><span>Córdoba</span></div></div>
+      <div class="comp"><div class="mono">EQ</div><h4>Equipar Salud</h4><div class="pr">Camillas, mobiliario clínico y equipamiento de internación</div><div class="badges"><span>IRAM</span><span>Santa Fe</span></div></div>
+      <div class="comp"><div class="mono">DX</div><h4>Diagnostix</h4><div class="pr">Equipos de diagnóstico por imágenes e in vitro</div><div class="badges"><span>ISO 13485</span><span>ANMAT</span><span>Exporta</span></div></div>
+      <div class="comp"><div class="mono">RM</div><h4>Rehabilita Médica</h4><div class="pr">Equipamiento de rehabilitación y fisioterapia</div><div class="badges"><span>ANMAT</span><span>Mendoza</span></div></div>
+    </div>
+    <div class="ctaband" style="margin-top:44px">
+      <h3>¿Sos socio? Tu empresa en el catálogo</h3>
+      <p>Gestioná tu perfil, tus productos y certificaciones desde el área privada para aparecer ante compradores y licitantes.</p>
+      <button class="btn btn-white" onclick="go('login')">Gestionar mi perfil →</button>
+    </div>
+  </div></section>
+  <div class="backbar"><div class="wrap"><a onclick="go('home')">← Volver al inicio de la plataforma</a></div></div>
 </div>
 
 <!-- ============ LOGIN ============ -->
@@ -540,6 +753,23 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
 <script>
 function go(v){document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));document.getElementById(v).classList.add('active');window.scrollTo(0,0)}
 function goApp(sub){go('app');subApp(sub)}
+function openCurso(title,desc,mod,price){
+  document.getElementById('curso-title').textContent=title;
+  document.getElementById('curso-desc').textContent=desc;
+  document.getElementById('curso-mod').textContent=mod;
+  document.getElementById('curso-price').textContent=price;
+  document.getElementById('ficha-mod').textContent=mod;
+  document.getElementById('ficha-price').textContent=price;
+  go('v-curso');
+}
+// deep links desde la web institucional (index.html#catalogo, etc.)
+function routeHash(){
+  var map={catalogo:'v-catalogo',observatorio:'v-observatorio',academia:'v-academia',normativo:'v-normativo'};
+  var h=(location.hash||'').replace('#','');
+  if(map[h]) go(map[h]);
+}
+window.addEventListener('hashchange',routeHash);
+window.addEventListener('DOMContentLoaded',routeHash);
 function subApp(s){
   document.querySelectorAll('.subapp').forEach(e=>e.classList.remove('on'));
   var el=document.getElementById('s-'+s); if(el)el.classList.add('on');

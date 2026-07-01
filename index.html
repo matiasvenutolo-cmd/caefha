@@ -111,6 +111,14 @@ h2{font-size:clamp(26px,3.3vw,36px);font-weight:900;letter-spacing:-.02em;color:
 .obj .n{font-size:13px;font-weight:900;color:var(--red);font-family:'Lato';letter-spacing:.05em}
 .obj h3{font-size:18px;font-weight:900;color:var(--ink);margin:8px 0 8px}
 .obj p{font-size:14.5px;color:var(--slate)}
+.obj.plat{background:linear-gradient(135deg,var(--red),var(--red-2));border:none;color:#fff;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(177,30,45,.28);position:relative;overflow:hidden}
+.obj.plat:before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
+.obj.plat:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(177,30,45,.34)}
+.obj.plat .n{color:#fff;opacity:.9}
+.obj.plat h3{color:#fff}
+.obj.plat p{color:#fbe0e3}
+.obj.plat .plat-cta{margin-top:auto;padding-top:16px;font-weight:900;font-size:15px;color:#fff;display:inline-flex;gap:8px;align-items:center}
+.obj.plat:hover .plat-cta{gap:12px}
 
 /* Internacionalización */
 .intl{background:linear-gradient(135deg,var(--ink-2),#22262b);color:#fff}
@@ -213,9 +221,6 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
     <a href="#novedades">Novedades</a>
     <a href="#observatorio">Observatorio</a>
     <a href="#academia">Academia</a>
-    <div class="dd"><span>Gobierno <i class="caret">▼</i></span>
-      <div class="menu"><a href="#">Gestión</a><a href="#">Documentos</a></div>
-    </div>
     <a href="#contacto">Contacto</a>
   </nav>
   <span class="sp"></span>
@@ -255,7 +260,7 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
     <div class="since"><b>1976</b><span>representando a la industria médica nacional</span></div>
   </div>
   <div class="visual">
-    <span class="iso">🩺</span>
+    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=900&q=80&auto=format&fit=crop" alt="Equipamiento hospitalario en quirófano" style="width:100%;height:100%;object-fit:cover" />
     <div class="badge">Miembro de ADIMRA<small>Asociación de Industriales Metalúrgicos</small></div>
   </div>
 </div></section>
@@ -273,7 +278,7 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
     <div class="obj"><div class="n">03 — Posicionamiento</div><h3>Cooperación e innovación</h3><p>Fomentar la cooperación industrial, tecnológica y científica del sector de la tecnología médica.</p></div>
     <div class="obj"><div class="n">04 — Internacionalización</div><h3>Exportar al mundo</h3><p>Fortalecer la exportación de tecnología médica argentina mediante ferias, misiones comerciales y eventos.</p></div>
     <div class="obj"><div class="n">05 — Asesoramiento</div><h3>Acompañar al asociado</h3><p>Ofrecer acompañamiento en normativas nacionales e internacionales aplicables a la actividad.</p></div>
-    <div class="obj" style="background:var(--wash);border-style:dashed"><div class="n" style="color:var(--blue)">+ Servicios</div><h3>Beneficios para socios</h3><p>Capacitación, observatorio del sector y vínculo con compradores. <a href="plataforma.html" style="color:var(--red);font-weight:900">Ver propuesta →</a></p></div>
+    <a class="obj plat" href="plataforma.html"><div class="n">Plataforma CAEHFA</div><h3>Servicios digitales para socios</h3><p>Área privada, pago de cuotas, capacitación, normativa y catálogo de empresas. Todo en un solo lugar.</p><span class="plat-cta">Ingresar a la Plataforma →</span></a>
   </div>
 </div></section>
 
@@ -321,27 +326,15 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
       <h2>El directorio de la industria médica nacional</h2>
       <p>Conocé a las empresas asociadas, sus productos y certificaciones. Una herramienta para compradores hospitalarios, organismos del Estado y licitantes que buscan proveedores nacionales.</p>
     </div>
-    <div class="right"><a class="btn btn-red" href="#">Explorar el catálogo →</a></div>
+    <div class="right"><a class="btn btn-red" href="plataforma.html#catalogo">Explorar el catálogo →</a></div>
   </div>
 </div></section>
 
 <!-- ===== Observatorio + Academia teaser ===== -->
 <section id="observatorio" style="padding-top:0"><div class="wrap">
   <div class="grid g2">
-    <div class="obj" style="padding:32px"><span class="kick2">Observatorio</span><h3 style="font-size:22px;margin-top:9px">Análisis del sector</h3><p style="font-size:15px">Información, estadísticas e informes sobre la industria de tecnología médica argentina: producción, comercio exterior y coyuntura.</p><a class="btn btn-out btn-sm" href="#" style="margin-top:16px">Ver observatorio</a></div>
-    <div class="obj" id="academia" style="padding:32px"><span class="kick2">Academia</span><h3 style="font-size:22px;margin-top:9px">Capacitación para el sector</h3><p style="font-size:15px">Cursos, jornadas y capacitaciones sobre normativa, calidad y comercio exterior para los profesionales de las empresas asociadas.</p><a class="btn btn-out btn-sm" href="#" style="margin-top:16px">Ver Academia</a></div>
-  </div>
-</div></section>
-
-<!-- ===== Propuesta Pinaro (separado, discreto) ===== -->
-<section class="proposal"><div class="wrap">
-  <div class="box">
-    <div>
-      <span class="tag">Próximamente · propuesta</span>
-      <h2>Una nueva área de socios para CAEHFA</h2>
-      <p>Estamos desarrollando una plataforma para que los socios accedan a su estado de cuota, paguen online, consulten normativa con un asistente de IA y se capaciten. Mirá la demo de lo que viene.</p>
-    </div>
-    <div class="right"><a class="btn btn-red" href="plataforma.html">Ver la plataforma →</a></div>
+    <div class="obj" style="padding:32px"><span class="kick2">Observatorio</span><h3 style="font-size:22px;margin-top:9px">Análisis del sector</h3><p style="font-size:15px">Información, estadísticas e informes sobre la industria de tecnología médica argentina: producción, comercio exterior y coyuntura.</p><a class="btn btn-out btn-sm" href="plataforma.html#observatorio" style="margin-top:16px">Ver observatorio</a></div>
+    <div class="obj" id="academia" style="padding:32px"><span class="kick2">Academia</span><h3 style="font-size:22px;margin-top:9px">Capacitación para el sector</h3><p style="font-size:15px">Cursos, jornadas y capacitaciones sobre normativa, calidad y comercio exterior para los profesionales de las empresas asociadas.</p><a class="btn btn-out btn-sm" href="plataforma.html#academia" style="margin-top:16px">Ver Academia</a></div>
   </div>
 </div></section>
 
