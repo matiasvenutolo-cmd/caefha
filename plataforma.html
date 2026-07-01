@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CAEHFA — Plataforma de Socios (Demo)</title>
 <meta name="description" content="Prototipo de la nueva plataforma digital de CAEHFA: área de socios, Asistente Normativo con IA, Academia y pagos online. Desarrollado por Pinaro." />
-<meta name="theme-color" content="#0A2540" />
+<meta name="theme-color" content="#B11E2D" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CAEHFA — Nueva plataforma de socios (demo)" />
 <meta property="og:description" content="Probá el prototipo: área privada, Asistente Normativo con IA, Academia con certificados y pagos online. Por Pinaro." />
@@ -13,11 +13,11 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --navy:#0A2540; --navy-2:#0E3A5C; --blue:#0E5A8A; --blue-2:#1273B0;
-  --teal:#00A6A6; --teal-soft:#E6F6F6;
+  --navy:#2B2F34; --navy-2:#3C4248; --blue:#B11E2D; --blue-2:#8E1622;
+  --teal:#2E8BC0; --teal-soft:#E8F2F9;
   --bg:#F6F8FB; --paper:#FFFFFF; --wash:#EEF3F8;
   --text:#16202B; --mute:#5A6B7B; --soft:#8A99A8;
   --border:#E3E9F0; --border-2:#D3DCE6;
@@ -27,7 +27,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+body{font-family:'Lato',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 html{overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%}
@@ -44,6 +44,7 @@ img{max-width:100%}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;gap:28px;height:68px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.brand .logo-img{height:46px;width:auto}
 .brand .logo{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--teal));display:grid;place-items:center;color:#fff;font-weight:800;font-size:17px;letter-spacing:-.02em;box-shadow:0 4px 12px rgba(14,90,138,.3)}
 .brand .name{font-weight:800;font-size:19px;color:var(--navy);letter-spacing:-.02em}
 .brand .name span{display:block;font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.04em;margin-top:-2px}
@@ -59,12 +60,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 .menu-tog{display:none}
 
 /* ===== Hero ===== */
-.hero{background:radial-gradient(120% 130% at 80% -10%,rgba(0,166,166,.18),transparent 55%),linear-gradient(180deg,#0A2540,#0E3A5C);color:#fff;padding:84px 0 92px;position:relative;overflow:hidden}
+.hero{background:radial-gradient(120% 130% at 80% -10%,rgba(177,30,45,.30),transparent 55%),linear-gradient(180deg,#2B2F34,#3C4248);color:#fff;padding:84px 0 92px;position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none}
 .hero .wrap{position:relative;z-index:2}
-.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:600;color:#bfe6e6;margin-bottom:22px}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 14px;border-radius:100px;font-size:12.5px;font-weight:700;color:#ffc2c8;margin-bottom:22px}
 .hero h1{font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.05;letter-spacing:-.03em;max-width:780px}
-.hero h1 em{font-style:normal;color:#3fdede}
+.hero h1 em{font-style:normal;color:#ff8a96}
 .hero p.lead{font-size:18px;color:#c4d4e4;max-width:600px;margin:22px 0 32px}
 .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 .hero .btn-primary{background:#fff;color:var(--navy);padding:13px 22px;font-size:15px}
@@ -95,7 +96,7 @@ section.block{padding:72px 0}
 
 .tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:100px}
 .t-ok{background:var(--ok-bg);color:var(--ok)} .t-warn{background:var(--warn-bg);color:var(--warn)} .t-bad{background:var(--bad-bg);color:var(--bad)}
-.t-new{background:var(--teal-soft);color:#067}
+.t-new{background:var(--teal-soft);color:#1B6E9E}
 
 /* ===== Footer ===== */
 footer{background:var(--navy);color:#9fb4c9;padding:54px 0 30px;font-size:14px}
@@ -106,12 +107,12 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
 
 /* ===== Login ===== */
 .login-wrap{min-height:calc(100vh - 96px);display:grid;grid-template-columns:1fr 1fr}
-.login-art{background:radial-gradient(120% 120% at 20% 0%,rgba(0,166,166,.25),transparent 55%),linear-gradient(160deg,#0A2540,#0E3A5C);color:#fff;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+.login-art{background:radial-gradient(120% 120% at 20% 0%,rgba(177,30,45,.32),transparent 55%),linear-gradient(160deg,#2B2F34,#3C4248);color:#fff;padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
 .login-art h2{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:18px}
 .login-art p{color:#c4d4e4;font-size:16px;max-width:380px}
 .login-art ul{list-style:none;margin-top:30px;display:grid;gap:13px}
 .login-art li{display:flex;gap:11px;align-items:center;color:#dce8f2;font-size:15px}
-.login-art li i{width:24px;height:24px;border-radius:7px;background:rgba(0,166,166,.25);display:grid;place-items:center;font-style:normal;color:#5ee;font-size:13px}
+.login-art li i{width:24px;height:24px;border-radius:7px;background:rgba(46,139,192,.30);display:grid;place-items:center;font-style:normal;color:#8fd0f2;font-size:13px}
 .login-form{display:grid;place-items:center;padding:40px}
 .login-card{width:100%;max-width:380px}
 .login-card h3{font-size:24px;font-weight:800;color:var(--navy)}
@@ -179,9 +180,9 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
 
 /* chat */
 .chat{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;position:sticky;top:120px}
-.chat .ch{background:linear-gradient(135deg,var(--teal),#0a8585);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:11px}
+.chat .ch{background:linear-gradient(135deg,var(--teal),#1F6E96);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:11px}
 .chat .ch .av{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:18px}
-.chat .ch b{font-size:15px;display:block}.chat .ch span{font-size:12px;color:#cdf3f3}
+.chat .ch b{font-size:15px;display:block}.chat .ch span{font-size:12px;color:#d6ecf7}
 .chat .body{padding:18px;display:flex;flex-direction:column;gap:14px;max-height:430px;overflow:auto}
 .msg{max-width:88%;font-size:14px;line-height:1.5}
 .msg.u{align-self:flex-end;background:var(--blue);color:#fff;padding:10px 14px;border-radius:14px 14px 4px 14px}
@@ -200,8 +201,8 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
 .course{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.18s;cursor:pointer}
 .course:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(16,38,64,.1)}
 .course .thumb{height:120px;background:linear-gradient(135deg,var(--blue),var(--teal));position:relative;display:flex;align-items:flex-end;padding:14px}
-.course .thumb.v2{background:linear-gradient(135deg,#5b3da8,#0E5A8A)}
-.course .thumb.v3{background:linear-gradient(135deg,#0a8585,#0A2540)}
+.course .thumb.v2{background:linear-gradient(135deg,#B11E2D,#32373C)}
+.course .thumb.v3{background:linear-gradient(135deg,#2E8BC0,#32373C)}
 .course .thumb .px{position:absolute;top:12px;right:12px}
 .course .thumb .ty{color:#fff;font-size:12px;font-weight:600;opacity:.9}
 .course .cb{padding:18px}
@@ -252,8 +253,7 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
 <header>
   <div class="nav">
     <div class="brand" onclick="go('home')">
-      <div class="logo">C</div>
-      <div class="name">CAEHFA<span>Cámara Argentina de Empresas de Tecnología Médica</span></div>
+      <img class="logo-img" src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/cropped-CAEHFA-ADIMRA-TOP-2.png" alt="CAEHFA — Cámara de Equipamiento Hospitalario de Fabricación Argentina" />
     </div>
     <div class="links">
       <a onclick="go('home')">Institucional</a>
@@ -361,8 +361,8 @@ footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-siz
     <div class="wrap">
       <div class="cols">
         <div>
-          <div class="brand" style="margin-bottom:14px"><div class="logo">C</div><div class="name" style="color:#fff">CAEHFA</div></div>
-          <p style="font-size:13.5px;max-width:300px">Cámara Argentina de Empresas de Tecnología Médica. Representamos a más de 400 empresas fabricantes nacionales.</p>
+          <img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/CAEHFA-pie-small.png" alt="CAEHFA" style="height:50px;background:#fff;padding:7px 10px;border-radius:7px;margin-bottom:14px" />
+          <p style="font-size:13.5px;max-width:300px">Cámara de Equipamiento Hospitalario de Fabricación Argentina. Representamos desde 1976 a la industria nacional de tecnología médico-hospitalaria.</p>
         </div>
         <div><h4>Plataforma</h4><a onclick="go('login')">Área de socios</a><a onclick="goApp('normativo')">Centro Normativo</a><a onclick="goApp('academia')">Academia</a><a onclick="go('home')">Observatorio</a></div>
         <div><h4>Institucional</h4><a>Quiénes somos</a><a>Autoridades</a><a>Cadena de valor</a><a>Internacionalización</a></div>
