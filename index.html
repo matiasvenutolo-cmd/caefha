@@ -4,385 +4,581 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>CAEHFA — Cámara de Equipamiento Hospitalario de Fabricación Argentina</title>
-<meta name="description" content="CAEHFA nuclea desde 1976 a las empresas fabricantes de tecnología médico-hospitalaria e insumos de Argentina. ~400 empresas, +4.500 empleos directos." />
-<meta name="theme-color" content="#B11E2D" />
+<meta name="description" content="CAEHFA nuclea desde 1976 a la industria argentina de equipamiento hospitalario e insumos médicos. Catálogo de socios, cursos y presencia internacional." />
+<meta name="theme-color" content="#C41E2E" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CAEHFA — Cámara de Equipamiento Hospitalario de Fabricación Argentina" />
-<meta property="og:description" content="Representamos desde 1976 a la industria nacional de tecnología médico-hospitalaria. Sitio renovado — propuesta de Pinaro." />
+<meta property="og:description" content="La industria nacional de tecnología médico-hospitalaria, desde 1976. Sitio renovado — propuesta de Pinaro." />
 <meta property="og:image" content="https://caefha.vercel.app/og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://caefha.vercel.app/" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --red:#B11E2D; --red-2:#8E1622; --red-soft:#FBEAEC;
-  --ink:#2B2B2B; --ink-2:#32373C; --slate:#5A5E63; --soft:#8A9099;
-  --blue:#2E8BC0; --blue-soft:#E8F2F9;
-  --bg:#FFFFFF; --wash:#F5F6F8; --wash-2:#EEF0F3; --border:#E2E5E9; --border-2:#D2D7DD;
-  --maxw:1200px; --radius:10px; --radius-sm:7px;
-  --shadow:0 1px 2px rgba(20,24,28,.04),0 10px 30px rgba(20,24,28,.07);
+  --red:#C41E2E; --bordo:#8E1622; --bordo-deep:#6C0F18;
+  --cel:#1E9BD7; --cel-deep:#0E6FA8; --cel-soft:#E7F4FB;
+  --ink:#191E24; --slate:#586069; --soft:#939BA4;
+  --bg:#FFFFFF; --wash:#F5F7F9; --wash2:#EAEEF2; --border:#E4E8EC; --border2:#D3DAE0;
+  --grad:linear-gradient(120deg,#C41E2E 0%,#8E1622 42%,#1E9BD7 100%);
+  --fd:'Space Grotesk',system-ui,sans-serif; --fs:'Inter',system-ui,sans-serif;
+  --maxw:1220px; --r:16px; --r-sm:10px;
+  --sh:0 1px 2px rgba(20,28,36,.04),0 12px 32px rgba(20,28,36,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Lato',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--fs);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:700;font-size:14px;border:none;cursor:pointer;border-radius:var(--radius-sm);padding:11px 20px;transition:.15s;white-space:nowrap}
-.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-2)}
-.btn-out{background:transparent;border:1.5px solid var(--border-2);color:var(--ink)}.btn-out:hover{border-color:var(--red);color:var(--red)}
-.btn-ghost{background:var(--wash);color:var(--ink-2)}.btn-ghost:hover{background:var(--wash-2)}
-.btn-sm{padding:8px 14px;font-size:13px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+h1,h2,h3,.dsp{font-family:var(--fd);letter-spacing:-.02em}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kick{font-family:var(--fs);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fs);font-weight:600;font-size:14.5px;border:none;cursor:pointer;border-radius:100px;padding:12px 22px;transition:.16s;white-space:nowrap}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--bordo);transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{transform:translateY(-1px)}
+.btn-out{background:#fff;border:1.5px solid var(--border2);color:var(--ink)}.btn-out:hover{border-color:var(--red);color:var(--red)}
+.btn-sm{padding:9px 16px;font-size:13.5px}
 
-/* ===== Topbar ===== */
-.topbar{background:var(--ink-2);color:#cfd3d8;font-size:12.5px}
-.topbar .wrap{display:flex;align-items:center;height:38px;gap:20px}
-.topbar a{color:#cfd3d8;display:inline-flex;align-items:center;gap:6px}.topbar a:hover{color:#fff}
+/* topbar */
+.topbar{background:var(--ink);color:#c3cbd3;font-size:12.5px}
+.topbar .wrap{display:flex;align-items:center;height:38px;gap:18px}
+.topbar a{color:#c3cbd3}.topbar a:hover{color:#fff}
 .topbar .sp{flex:1}
-.topbar .socials{display:flex;gap:14px}
+.langs{display:flex;gap:2px}
+.langs button{background:none;border:none;color:#8e97a0;font-family:var(--fs);font-size:12px;font-weight:700;cursor:pointer;padding:3px 7px;border-radius:5px}
+.langs button.on{color:#fff;background:rgba(255,255,255,.12)}
+.langs button:hover{color:#fff}
 
-/* ===== Header ===== */
-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;gap:8px;height:80px}
-.logo-img{height:50px;width:auto;cursor:pointer}
-.nav .links{display:flex;align-items:center;gap:2px;margin-left:18px}
-.nav .links>a,.dd>span{display:inline-flex;align-items:center;gap:5px;padding:9px 13px;border-radius:7px;font-size:14.5px;font-weight:700;color:var(--ink-2);cursor:pointer;transition:.13s}
-.nav .links>a:hover,.dd:hover>span{background:var(--wash);color:var(--red)}
-.dd{position:relative}
-.dd .caret{font-size:9px;color:var(--soft);margin-top:1px}
-.dd .menu{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);min-width:210px;padding:7px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s;z-index:5}
-.dd:hover .menu{opacity:1;visibility:visible;transform:none}
-.dd .menu a{display:block;padding:9px 12px;border-radius:6px;font-size:14px;font-weight:400;color:var(--slate)}
-.dd .menu a:hover{background:var(--red-soft);color:var(--red)}
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;gap:8px;height:74px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.emblem{width:40px;height:40px;flex-shrink:0}
+.brand .bt{font-family:var(--fd);font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.brand .bt small{display:block;font-family:var(--fs);font-size:9.5px;font-weight:600;color:var(--soft);letter-spacing:.02em;margin-top:2px}
+.links{display:flex;gap:3px;margin-left:20px}
+.links a{padding:9px 13px;border-radius:9px;font-size:14.5px;font-weight:600;color:var(--slate);cursor:pointer;transition:.13s}
+.links a:hover{background:var(--wash);color:var(--red)}
 .nav .sp{flex:1}
-.menu-btn{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer;padding:4px 8px}
+.icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:#fff;cursor:pointer;display:grid;place-items:center;font-size:16px;color:var(--slate)}
+.icon-btn:hover{border-color:var(--red);color:var(--red)}
+.menu-btn{display:none;background:none;border:none;font-size:25px;cursor:pointer;color:var(--ink)}
 
-/* ===== Hero ===== */
-.hero{position:relative;background:linear-gradient(110deg,#fff 0%,#fff 46%,var(--wash) 46%,var(--wash) 100%);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:64px 24px 60px;position:relative;z-index:2}
-.hero .kick{display:inline-flex;align-items:center;gap:9px;color:var(--red);font-weight:900;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
-.hero .kick:before{content:"";width:26px;height:3px;background:var(--red);border-radius:2px}
-.hero h1{font-size:clamp(30px,4.4vw,48px);font-weight:900;line-height:1.08;letter-spacing:-.015em;color:var(--ink)}
-.hero h1 .r{color:var(--red)}
-.hero p.lead{font-size:18px;color:var(--slate);margin:20px 0 28px;max-width:520px}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
-.hero-card .top{background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;padding:20px 24px}
-.hero-card .top b{font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;font-weight:700}
-.hero-card .top h3{font-size:20px;font-weight:900;margin-top:3px}
-.hero-card .stats{display:grid;grid-template-columns:1fr 1fr}
-.hero-card .stats .st{padding:20px 24px;border-top:1px solid var(--border);border-right:1px solid var(--border)}
-.hero-card .stats .st:nth-child(2n){border-right:none}
-.hero-card .stats .st b{display:block;font-size:30px;font-weight:900;color:var(--red);line-height:1;letter-spacing:-.02em}
-.hero-card .stats .st span{font-size:12.5px;color:var(--slate);margin-top:5px;display:block}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:76px 0 84px;background:var(--bg)}
+.blobs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;mix-blend-mode:multiply}
+.blob.b1{width:560px;height:560px;background:radial-gradient(circle at 30% 30%,#C41E2E,transparent 68%);top:-180px;right:-80px;animation:drift1 18s ease-in-out infinite}
+.blob.b2{width:520px;height:520px;background:radial-gradient(circle at 40% 40%,#1E9BD7,transparent 66%);top:-40px;right:180px;animation:drift2 22s ease-in-out infinite}
+.blob.b3{width:420px;height:420px;background:radial-gradient(circle at 50% 50%,#8E1622,transparent 70%);top:120px;right:-40px;animation:drift3 26s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,50px) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-90px,80px) scale(.9)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-40px) scale(1.1)}}
+.hero .wrap{position:relative;z-index:2}
+.hero .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 15px;font-size:12.5px;font-weight:600;color:var(--slate);box-shadow:var(--sh);margin-bottom:24px}
+.hero .chip .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:700;line-height:1.02;max-width:15ch}
+.hero p.sub{font-size:19px;color:var(--slate);max-width:560px;margin:24px 0 30px}
+.searchbar{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border2);border-radius:100px;padding:8px 8px 8px 22px;max-width:600px;box-shadow:var(--sh);transition:.16s}
+.searchbar:focus-within{border-color:var(--red);box-shadow:0 0 0 4px rgba(196,30,46,.1)}
+.searchbar .mag{font-size:18px;color:var(--soft)}
+.searchbar input{flex:1;border:none;outline:none;font-family:var(--fs);font-size:16px;background:none;color:var(--ink);min-width:0}
+.hero .qchips{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.hero .qchips span{font-size:13px;color:var(--slate);background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 13px;cursor:pointer}
+.hero .qchips span:hover{border-color:var(--cel);color:var(--cel-deep)}
 
-/* ===== Section base ===== */
-section{padding:74px 0}
-.shead{margin-bottom:42px;max-width:680px}
-.shead.center{margin-left:auto;margin-right:auto;text-align:center}
-.kick2{color:var(--red);font-weight:900;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
-h2{font-size:clamp(26px,3.3vw,36px);font-weight:900;letter-spacing:-.02em;color:var(--ink);margin:9px 0 0;line-height:1.12}
-.shead p{font-size:17px;color:var(--slate);margin-top:13px}
+/* section base */
+section{padding:82px 0}
+.shead{max-width:640px;margin-bottom:44px}
+.shead.ctr{margin-left:auto;margin-right:auto;text-align:center}
+h2.st{font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--ink);margin:10px 0 0;line-height:1.1}
+.shead p{font-size:17px;color:var(--slate);margin-top:14px}
 
-.grid{display:grid;gap:22px}
-.g2{grid-template-columns:1fr 1fr}
-.g3{grid-template-columns:repeat(3,1fr)}
+/* indicadores */
+.ind{background:linear-gradient(120deg,#fbfdff,#f4f8fc 45%,#fdf4f5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ind .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.ind .i b{font-family:var(--fd);font-size:clamp(40px,6vw,66px);font-weight:700;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.03em}
+.ind .i span{display:block;font-size:14.5px;color:var(--slate);margin-top:10px;font-weight:500}
 
-/* Quiénes somos */
-.about{background:var(--wash)}
-.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.about .txt p{font-size:16.5px;color:var(--slate);margin-top:16px}
-.about .txt p:first-of-type{margin-top:18px}
-.about .since{display:inline-flex;align-items:baseline;gap:10px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 22px;margin-top:26px;box-shadow:var(--shadow)}
-.about .since b{font-size:40px;font-weight:900;color:var(--red);letter-spacing:-.02em}
-.about .since span{font-size:14px;color:var(--slate);max-width:160px}
-.about .visual{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(135deg,var(--blue-soft),#fff);border:1px solid var(--border);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-.about .visual .iso{font-size:96px}
-.about .visual .badge{position:absolute;bottom:18px;left:18px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 16px;font-weight:700;font-size:14px;color:var(--ink-2);box-shadow:var(--shadow)}
-.about .visual .badge small{display:block;font-weight:400;font-size:12px;color:var(--soft)}
+/* buscador + catálogo */
+.tools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:26px}
+.tools .searchbar{flex:1;min-width:260px;margin:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips .c{font-size:13px;font-weight:600;padding:8px 15px;border-radius:100px;background:#fff;border:1px solid var(--border2);color:var(--slate);cursor:pointer;transition:.14s}
+.chips .c.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cardgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rcard{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:.18s;display:flex;flex-direction:column}
+.rcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,28,36,.12)}
+.rcard .top{height:96px;position:relative;display:flex;align-items:flex-end;padding:14px}
+.rcard .type{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:rgba(255,255,255,.92);color:var(--ink)}
+.rcard .mono{width:52px;height:52px;border-radius:13px;background:#fff;box-shadow:var(--sh);display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:19px;color:var(--red)}
+.rcard .vid{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:600;padding:4px 9px;border-radius:100px;display:flex;gap:5px;align-items:center}
+.rcard .bd{padding:18px;flex:1;display:flex;flex-direction:column}
+.rcard h3{font-family:var(--fd);font-size:17.5px;font-weight:600;color:var(--ink)}
+.rcard .desc{font-size:13.5px;color:var(--slate);margin:6px 0 12px}
+.rcard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.rcard .tags span{font-size:11px;font-weight:600;background:var(--wash);border:1px solid var(--border);border-radius:100px;padding:3px 9px;color:var(--slate)}
+.tg-emp{background:linear-gradient(135deg,#C41E2E,#8E1622)}
+.tg-prod{background:linear-gradient(135deg,#1E9BD7,#0E6FA8)}
+.tg-cur{background:linear-gradient(135deg,#8E1622,#1E9BD7)}
+.nores{grid-column:1/-1;text-align:center;color:var(--soft);padding:40px;font-size:15px}
 
-/* Objetivos */
-.obj{border:1px solid var(--border);border-radius:12px;padding:26px 24px;background:#fff;transition:.18s}
-.obj:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:var(--shadow)}
-.obj .n{font-size:13px;font-weight:900;color:var(--red);font-family:'Lato';letter-spacing:.05em}
-.obj h3{font-size:18px;font-weight:900;color:var(--ink);margin:8px 0 8px}
-.obj p{font-size:14.5px;color:var(--slate)}
-.obj.plat{background:linear-gradient(135deg,var(--red),var(--red-2));border:none;color:#fff;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(177,30,45,.28);position:relative;overflow:hidden}
-.obj.plat:before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.08)}
-.obj.plat:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(177,30,45,.34)}
-.obj.plat .n{color:#fff;opacity:.9}
-.obj.plat h3{color:#fff}
-.obj.plat p{color:#fbe0e3}
-.obj.plat .plat-cta{margin-top:auto;padding-top:16px;font-weight:900;font-size:15px;color:#fff;display:inline-flex;gap:8px;align-items:center}
-.obj.plat:hover .plat-cta{gap:12px}
+/* internacional / mapa */
+.intl{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.intl .kick{color:#ff8a94}
+.intl h2.st{color:#fff}
+.intl .shead p{color:#aab3bc}
+.mapwrap{position:relative;width:100%;aspect-ratio:2/1;max-width:1000px;margin:8px auto 0}
+.mapwrap canvas{width:100%;height:100%;display:block}
+.mk{position:absolute;transform:translate(-50%,-50%);z-index:3}
+.mk .pin{width:13px;height:13px;border-radius:50%;border:2px solid #fff;cursor:pointer;box-shadow:0 0 0 0 rgba(255,255,255,.5)}
+.mk.hub .pin{width:17px;height:17px;background:var(--red);animation:pulse 2.4s infinite}
+.mk.exp .pin{background:#ff5a68}.mk.fer .pin{background:#3fc4f5}.mk.mis .pin{background:#ffd166}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(196,30,46,.55)}70%{box-shadow:0 0 0 16px rgba(196,30,46,0)}100%{box-shadow:0 0 0 0 rgba(196,30,46,0)}}
+.mk .tip{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:#fff;color:var(--ink);font-size:12px;font-weight:600;white-space:nowrap;padding:6px 11px;border-radius:8px;box-shadow:var(--sh);opacity:0;visibility:hidden;transition:.15s;pointer-events:none}
+.mk .tip small{display:block;font-weight:500;color:var(--slate);font-size:10.5px}
+.mk:hover .tip{opacity:1;visibility:visible;bottom:24px}
+.legend{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.legend div{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#c3cbd3}
+.legend i{width:11px;height:11px;border-radius:50%;display:inline-block}
 
-/* Internacionalización */
-.intl{background:linear-gradient(135deg,var(--ink-2),#22262b);color:#fff}
-.intl .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.intl .kick2{color:#ff8a96}
-.intl h2{color:#fff}
-.intl p{color:#c3c8ce;font-size:16.5px;margin-top:14px}
-.intl .events{display:grid;gap:14px;margin-top:6px}
-.event{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:center}
-.event .date{text-align:center;background:var(--red);border-radius:9px;padding:8px 12px;min-width:64px}
-.event .date b{display:block;font-size:21px;font-weight:900;line-height:1}.event .date span{font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.event .info b{font-size:16px;font-weight:900;display:block}
-.event .info span{font-size:13.5px;color:#aeb4ba}
+/* cursos */
+.course{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:.18s;cursor:pointer;display:flex;flex-direction:column}
+.course:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,28,36,.12)}
+.course .th{height:110px;background:var(--grad);position:relative;display:flex;align-items:flex-end;padding:14px}
+.course .th.v2{background:linear-gradient(135deg,#1E9BD7,#0E6FA8)}
+.course .th.v3{background:linear-gradient(135deg,#8E1622,#6C0F18)}
+.course .th .ty{color:#fff;font-size:12px;font-weight:600}
+.course .bd{padding:18px;flex:1;display:flex;flex-direction:column}
+.course h3{font-family:var(--fd);font-size:16.5px;font-weight:600;color:var(--ink)}
+.course .cm{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:13px;color:var(--soft)}
+.course .pr{font-family:var(--fd);font-weight:700;color:var(--ink);font-size:15px}
 
-/* Novedades */
-.news{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.18s;display:flex;flex-direction:column}
-.news:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.news .img{aspect-ratio:35/22;background:var(--wash-2) center/cover no-repeat;position:relative}
-.news .cat{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:5px}
-.news .body{padding:20px;flex:1;display:flex;flex-direction:column}
-.news .date{font-size:12.5px;color:var(--soft);font-weight:700}
-.news h3{font-size:17px;font-weight:900;color:var(--ink);margin:8px 0 0;line-height:1.32}
-.news .more{margin-top:auto;padding-top:14px;font-size:13.5px;font-weight:900;color:var(--red);display:inline-flex;gap:6px}
-.news:hover .more{gap:10px}
+/* novedades */
+.news{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:.18s;display:flex;flex-direction:column}
+.news:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.news .im{aspect-ratio:16/10;background:var(--wash2) center/cover no-repeat}
+.news .bd{padding:18px}
+.news .dt{font-size:12.5px;color:var(--soft);font-weight:600}
+.news h3{font-family:var(--fd);font-size:16.5px;font-weight:600;color:var(--ink);margin-top:7px;line-height:1.3}
 
-/* Catálogo strip */
-.cat-strip{background:var(--red-soft);border:1px solid #f3d2d6;border-radius:16px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
-.cat-strip h2{font-size:28px}
-.cat-strip p{color:var(--slate);font-size:16px;margin-top:10px}
-.cat-strip .right{text-align:right}
+/* backoffice teaser */
+.bo{background:var(--wash)}
+.bo .box{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
+.bo .mock{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);overflow:hidden}
+.bo .mock .bar{height:38px;background:var(--wash);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 14px}
+.bo .mock .bar i{width:10px;height:10px;border-radius:50%;background:var(--border2);display:inline-block}
+.bo .mock .body{padding:16px;display:grid;grid-template-columns:120px 1fr;gap:14px}
+.bo .mock .side{display:grid;gap:7px}
+.bo .mock .side a{font-size:12px;color:var(--slate);padding:7px 9px;border-radius:7px;background:var(--wash)}
+.bo .mock .side a.on{background:var(--red);color:#fff;font-weight:600}
+.bo .mock .rows{display:grid;gap:9px}
+.bo .mock .row{display:flex;align-items:center;gap:10px;border:1px solid var(--border);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--slate)}
+.bo .mock .row b{color:var(--ink);font-weight:600}
+.bo .mock .row .st{margin-left:auto;font-size:10.5px;font-weight:700;color:#138A52;background:#E5F4EC;padding:2px 8px;border-radius:100px}
+.bo ul{list-style:none;display:grid;gap:12px;margin-top:18px}
+.bo li{display:flex;gap:11px;font-size:15.5px;color:var(--slate)}
+.bo li b{color:var(--ink)}
+.bo li .ck{color:var(--red);font-weight:700}
 
-/* Propuesta banner (Pinaro) */
-.proposal{background:var(--wash)}
-.proposal .box{background:#fff;border:1px dashed var(--border-2);border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.proposal .tag{display:inline-block;background:var(--blue-soft);color:var(--blue);font-weight:900;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:12px}
-.proposal h2{font-size:24px}
-.proposal p{color:var(--slate);font-size:15.5px;margin-top:8px;max-width:560px}
-
-/* Footer */
-footer{background:var(--ink-2);color:#aeb4ba;padding:56px 0 26px;font-size:14px}
-footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
-footer h4{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:15px}
-footer a{color:#aeb4ba;display:block;padding:4px 0}footer a:hover{color:#fff}
-footer .contact p{margin:5px 0;color:#aeb4ba}
-footer .logos{display:flex;gap:14px;align-items:center;margin-top:16px}
-footer .logos img{height:42px;background:#fff;padding:5px 8px;border-radius:6px}
-footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-size:12.5px;color:#7d848b;flex-wrap:wrap;gap:8px}
+/* footer */
+footer{background:var(--ink);color:#aab3bc;padding:60px 0 30px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h4{color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px}
+footer a{color:#aab3bc;display:block;padding:4px 0;cursor:pointer}footer a:hover{color:#fff}
+footer .logos{display:flex;gap:12px;align-items:center;margin-top:16px}
+footer .logos img{height:44px;background:#fff;padding:6px 9px;border-radius:7px}
+footer .bot{display:flex;justify-content:space-between;padding-top:22px;font-size:12.5px;color:#7c858e;flex-wrap:wrap;gap:8px}
 footer .bot a{display:inline;color:#fff;text-decoration:underline}
 
-/* mobile nav drawer */
-.drawer{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;opacity:0;visibility:hidden;transition:.2s}
+/* drawer */
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;opacity:0;visibility:hidden;transition:.2s}
 .drawer.open{opacity:1;visibility:visible}
-.drawer .panel{position:absolute;top:0;right:0;width:min(82vw,330px);height:100%;background:#fff;padding:22px;overflow:auto;transform:translateX(100%);transition:.25s}
-.drawer.open .panel{transform:none}
-.drawer .x{font-size:28px;border:none;background:none;cursor:pointer;color:var(--ink);float:right}
-.drawer a{display:block;padding:13px 6px;font-weight:700;font-size:16px;color:var(--ink-2);border-bottom:1px solid var(--border)}
-.drawer a.sub{font-weight:400;font-size:14.5px;color:var(--slate);padding-left:18px}
+.drawer .pan{position:absolute;top:0;right:0;width:min(84vw,340px);height:100%;background:#fff;padding:22px;overflow:auto;transform:translateX(100%);transition:.25s}
+.drawer.open .pan{transform:none}
+.drawer .x{float:right;font-size:27px;background:none;border:none;cursor:pointer}
+.drawer a{display:block;padding:14px 4px;font-family:var(--fd);font-weight:600;font-size:17px;color:var(--ink);border-bottom:1px solid var(--border);cursor:pointer}
 
-@media(max-width:900px){
-  .topbar .socials,.topbar .tel{display:none}
-  .nav .links{display:none}
-  .menu-btn{display:block;margin-left:auto}
-  .hero{background:#fff}
-  .hero .wrap{grid-template-columns:1fr;gap:30px;padding:40px 24px 46px}
-  .about .wrap,.intl .wrap{grid-template-columns:1fr;gap:30px}
-  .about .visual{order:-1}
-  .g2,.g3{grid-template-columns:1fr}
-  .cat-strip,.proposal .box{grid-template-columns:1fr;text-align:left}
-  .cat-strip .right,.proposal .box .right{text-align:left}
+@media(max-width:920px){
+  .topbar .hide{display:none}
+  .links{display:none}.menu-btn{display:block;margin-left:auto}
+  .ind .grid{grid-template-columns:1fr 1fr;gap:30px 20px}
+  .cardgrid{grid-template-columns:1fr}
+  .course-grid,.news-grid{grid-template-columns:1fr !important}
+  .bo .box{grid-template-columns:1fr;gap:28px}
   footer .cols{grid-template-columns:1fr 1fr}
 }
-@media(max-width:560px){footer .cols{grid-template-columns:1fr}}
+@media(max-width:560px){
+  footer .cols{grid-template-columns:1fr}.tools .chips{width:100%}
+  .bo .mock .body{grid-template-columns:1fr}
+  .bo .mock .side{display:flex;flex-wrap:wrap}
+  .bo .mock .side a{flex:0 0 auto}
+  .bo .mock .row{flex-wrap:wrap;gap:6px}
+  .bo .mock .row .st{margin-left:0}
+}
 </style>
 </head>
 <body>
 
+<!-- emblem def -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C41E2E"/><stop offset=".5" stop-color="#8E1622"/><stop offset="1" stop-color="#1E9BD7"/></linearGradient>
+</defs></svg>
+
 <!-- ===== Topbar ===== -->
 <div class="topbar"><div class="wrap">
-  <a class="tel" href="tel:+5491161677129">📞 +54 9 11 6167-7129</a>
-  <a href="mailto:secretariatecnica@caehfa.org">✉ secretariatecnica@caehfa.org</a>
+  <a class="hide" href="tel:+5491161677129">+54 9 11 6167-7129</a>
+  <a class="hide" href="mailto:secretariatecnica@caehfa.org">secretariatecnica@caehfa.org</a>
   <span class="sp"></span>
-  <div class="socials">
-    <a href="#">Instagram</a><a href="#">Facebook</a><a href="#">LinkedIn</a>
+  <div class="langs" id="langs">
+    <button data-l="es" class="on" onclick="setLang('es')">ES</button>
+    <button data-l="en" onclick="setLang('en')">EN</button>
+    <button data-l="pt" onclick="setLang('pt')">PT</button>
   </div>
 </div></div>
 
 <!-- ===== Header ===== -->
 <header><div class="wrap nav">
-  <img class="logo-img" src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/cropped-CAEHFA-ADIMRA-TOP-2.png" alt="CAEHFA — Cámara de Equipamiento Hospitalario de Fabricación Argentina" />
+  <div class="brand" onclick="scrollTo(0,0)">
+    <svg class="emblem" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <path d="M20 35C7 26 5 14 12 11c4-1.7 7 .6 8 3 1-2.4 4-4.7 8-3 7 3 5 15-8 24Z" stroke="url(#cg)" stroke-width="2.4"/>
+      <circle cx="15.5" cy="17" r="1.8" fill="#C41E2E"/><circle cx="20" cy="15.5" r="2.1" fill="#C41E2E"/><circle cx="24.5" cy="17" r="1.8" fill="#1E9BD7"/>
+      <circle cx="17.5" cy="21" r="1.6" fill="#8E1622"/><circle cx="22.5" cy="21" r="1.6" fill="#C41E2E"/><circle cx="20" cy="24.5" r="2" fill="#C41E2E"/>
+    </svg>
+    <div class="bt">CAEHFA<small data-i="tagline">Equipamiento Hospitalario de Fabricación Argentina</small></div>
+  </div>
   <nav class="links">
-    <a href="#inicio">Inicio</a>
-    <div class="dd"><span>Institucional <i class="caret">▼</i></span>
-      <div class="menu">
-        <a href="#nosotros">Asociados</a><a href="#nosotros">Autoridades</a>
-        <a href="#nosotros">Historia</a><a href="#objetivos">Perfil Empresario</a>
-        <a href="#nosotros">Legislación</a><a href="#nosotros">Cadena de Valor</a>
-      </div>
-    </div>
-    <a href="#catalogo">Empresas y Catálogo</a>
-    <a href="#novedades">Novedades</a>
-    <a href="#observatorio">Observatorio</a>
-    <a href="#academia">Academia</a>
-    <a href="#contacto">Contacto</a>
+    <a onclick="jump('nosotros')" data-i="nav_inst">Institucional</a>
+    <a onclick="jump('catalogo')" data-i="nav_soc">Socios</a>
+    <a onclick="jump('cursos')" data-i="nav_cur">Cursos</a>
+    <a onclick="jump('intl')" data-i="nav_int">Internacional</a>
+    <a onclick="jump('novedades')" data-i="nav_nov">Novedades</a>
+    <a onclick="jump('contacto')" data-i="nav_con">Contacto</a>
   </nav>
   <span class="sp"></span>
-  <a class="btn btn-red btn-sm" href="plataforma.html" style="margin-left:8px">Acceso socios</a>
-  <button class="menu-btn" onclick="document.getElementById('drawer').classList.add('open')">☰</button>
+  <button class="icon-btn" onclick="jump('catalogo');document.getElementById('cat-search').focus()" aria-label="Buscar">🔍</button>
+  <button class="menu-btn" onclick="document.getElementById('dr').classList.add('open')">☰</button>
 </div></header>
 
 <!-- ===== Hero ===== -->
-<section id="inicio" class="hero" style="padding:0"><div class="wrap">
-  <div>
-    <span class="kick">Industria nacional · desde 1976</span>
-    <h1>La industria argentina de <span class="r">tecnología médico-hospitalaria</span>, representada y unida.</h1>
-    <p class="lead">CAEHFA nuclea a las empresas fabricantes de equipamiento hospitalario e insumos médicos del país. Defendemos la producción nacional, impulsamos la exportación y acompañamos a nuestros asociados.</p>
-    <div class="ctas">
-      <a class="btn btn-red" href="#nosotros">Conocé la cámara →</a>
-      <a class="btn btn-out" href="#catalogo">Ver empresas asociadas</a>
+<section class="hero" id="inicio">
+  <div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap">
+    <span class="chip"><span class="dot"></span><span data-i="hero_chip">Industria nacional · desde 1976</span></span>
+    <h1><span data-i="hero_h1a">La industria argentina de</span> <span class="grad-txt" data-i="hero_h1b">tecnología médico-hospitalaria</span>.</h1>
+    <p class="sub" data-i="hero_sub">Representamos a las empresas fabricantes de equipamiento hospitalario e insumos del país. Encontrá una empresa, un producto o un curso en segundos.</p>
+    <div class="searchbar">
+      <span class="mag">🔍</span>
+      <input id="hero-search" data-i-ph="hero_ph" placeholder="Buscá una empresa, un producto o un curso…" onkeydown="if(event.key==='Enter')heroSearch()" oninput="heroSearch()" />
+      <button class="btn btn-red btn-sm" onclick="heroSearch()" data-i="hero_btn">Buscar</button>
+    </div>
+    <div class="qchips">
+      <span onclick="quick('ventiladores')">Ventiladores</span>
+      <span onclick="quick('esterilización')">Esterilización</span>
+      <span onclick="quick('ANMAT')">Cursos ANMAT</span>
+      <span onclick="quick('exportación')">Exportación</span>
     </div>
   </div>
-  <div class="hero-card">
-    <div class="top"><b>La cámara en números</b><h3>Un sector que produce y exporta</h3></div>
-    <div class="stats">
-      <div class="st"><b>1976</b><span>año de fundación</span></div>
-      <div class="st"><b>~400</b><span>empresas asociadas</span></div>
-      <div class="st"><b>+4.500</b><span>empleos directos</span></div>
-      <div class="st"><b>15.000</b><span>empleos indirectos</span></div>
+</section>
+
+<!-- ===== Indicadores ===== -->
+<section class="ind" style="padding:56px 0">
+  <div class="wrap"><div class="grid">
+    <div class="i"><b class="cnt" data-to="400" data-suf="+">0</b><span data-i="ind_emp">empresas asociadas</span></div>
+    <div class="i"><b class="cnt" data-to="4500" data-suf="+">0</b><span data-i="ind_dir">empleos directos</span></div>
+    <div class="i"><b class="cnt" data-to="15000" data-suf="+">0</b><span data-i="ind_ind">empleos indirectos</span></div>
+    <div class="i"><b class="cnt" data-to="1976" data-raw="1">0</b><span data-i="ind_year">representando al sector</span></div>
+  </div></div>
+</section>
+
+<!-- ===== Buscador + Catálogo de socios ===== -->
+<section id="catalogo">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kick" data-i="cat_kick">Catálogo de socios · buscador</span>
+      <h2 class="st" data-i="cat_h2">Encontrá empresas, productos y cursos</h2>
+      <p data-i="cat_p">El corazón del sitio: un buscador que atraviesa todo el contenido. Las empresas presentan sus productos, certificaciones y hasta un video, y actualizan su ficha desde el panel.</p>
+    </div>
+    <div class="tools">
+      <div class="searchbar"><span class="mag">🔍</span><input id="cat-search" data-i-ph="cat_ph" placeholder="Buscar por empresa, producto, certificación o provincia…" oninput="filterCat()" /></div>
+      <div class="chips" id="cat-chips">
+        <span class="c on" data-f="all" onclick="setF(this)" data-i="f_all">Todos</span>
+        <span class="c" data-f="empresa" onclick="setF(this)" data-i="f_emp">Empresas</span>
+        <span class="c" data-f="producto" onclick="setF(this)" data-i="f_prod">Productos</span>
+        <span class="c" data-f="curso" onclick="setF(this)" data-i="f_cur">Cursos</span>
+      </div>
+    </div>
+    <div class="cardgrid" id="cat-grid"></div>
+  </div>
+</section>
+
+<!-- ===== Internacional / Mapa ===== -->
+<section class="intl" id="intl">
+  <div class="wrap">
+    <div class="shead ctr">
+      <span class="kick" data-i="int_kick">Presencia internacional</span>
+      <h2 class="st" data-i="int_h2">Donde llega la industria argentina</h2>
+      <p data-i="int_p">Exportaciones, ferias y misiones comerciales. La pata internacional del sector, en un mapa vivo.</p>
+    </div>
+    <div class="mapwrap" id="mapwrap"><canvas id="map"></canvas></div>
+    <div class="legend">
+      <div><i style="background:#ff5a68"></i><span data-i="lg_exp">Exportaciones</span></div>
+      <div><i style="background:#3fc4f5"></i><span data-i="lg_fer">Ferias</span></div>
+      <div><i style="background:#ffd166"></i><span data-i="lg_mis">Misiones comerciales</span></div>
     </div>
   </div>
-</div></section>
+</section>
 
-<!-- ===== Quiénes somos ===== -->
-<section id="nosotros" class="about"><div class="wrap">
-  <div class="txt">
-    <span class="kick2">Quiénes somos</span>
-    <h2>Una cámara con casi medio siglo de historia</h2>
-    <p>La Cámara de Equipamiento Hospitalario de Fabricación Argentina (CAEHFA) fue creada en 1976, a partir de la fusión de dos cámaras nacidas en la década del 60. Nuclea a las empresas fabricantes de tecnología médico-hospitalaria e insumos en Argentina.</p>
-    <p>Sus asociados son principalmente PyMEs nacionales con diseños propios e innovación, que generan empleo de calidad y abastecen al sistema de salud público y privado de todo el país.</p>
-    <div class="since"><b>1976</b><span>representando a la industria médica nacional</span></div>
+<!-- ===== Cursos ===== -->
+<section id="cursos">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kick" data-i="cur_kick">Academia CAEHFA</span>
+      <h2 class="st" data-i="cur_h2">Capacitación para el sector</h2>
+      <p data-i="cur_p">Cursos y jornadas sobre normativa, calidad y comercio exterior. Abiertos a socios y a todo el sector salud.</p>
+    </div>
+    <div class="cardgrid course-grid">
+      <div class="course"><div class="th"><span class="ty">EN VIVO · 12 AGO</span></div><div class="bd"><h3>Novedades regulatorias ANMAT 2026</h3><div class="cm"><span class="pr" data-i="free">Gratis socios</span><span>Ver curso →</span></div></div></div>
+      <div class="course"><div class="th v2"><span class="ty">ASINCRÓNICO · 6 módulos</span></div><div class="bd"><h3>Habilitación de fabricantes paso a paso</h3><div class="cm"><span class="pr">$45.000</span><span>Ver curso →</span></div></div></div>
+      <div class="course"><div class="th v3"><span class="ty" data-i="open_sector">ABIERTO AL SECTOR</span></div><div class="bd"><h3>Uso y mantenimiento de equipamiento médico</h3><div class="cm"><span class="pr">$32.000</span><span>Ver curso →</span></div></div></div>
+    </div>
   </div>
-  <div class="visual">
-    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=900&q=80&auto=format&fit=crop" alt="Equipamiento hospitalario en quirófano" style="width:100%;height:100%;object-fit:cover" />
-    <div class="badge">Miembro de ADIMRA<small>Asociación de Industriales Metalúrgicos</small></div>
-  </div>
-</div></section>
-
-<!-- ===== Objetivos ===== -->
-<section id="objetivos"><div class="wrap">
-  <div class="shead center">
-    <span class="kick2">Nuestros objetivos</span>
-    <h2>Para qué trabaja la cámara</h2>
-    <p>Cinco prioridades que guían la gestión de CAEHFA frente al sector, el Estado y los mercados internacionales.</p>
-  </div>
-  <div class="grid g3">
-    <div class="obj"><div class="n">01 — Defensa del sector</div><h3>Representar a la industria</h3><p>Mantener como prioridad la defensa de los intereses de todas las empresas representadas, promoviendo un desarrollo con alcance federal.</p></div>
-    <div class="obj"><div class="n">02 — Protección</div><h3>Producción local</h3><p>Impulsar la producción local mediante la articulación con organismos del Estado, defendiendo la industria nacional.</p></div>
-    <div class="obj"><div class="n">03 — Posicionamiento</div><h3>Cooperación e innovación</h3><p>Fomentar la cooperación industrial, tecnológica y científica del sector de la tecnología médica.</p></div>
-    <div class="obj"><div class="n">04 — Internacionalización</div><h3>Exportar al mundo</h3><p>Fortalecer la exportación de tecnología médica argentina mediante ferias, misiones comerciales y eventos.</p></div>
-    <div class="obj"><div class="n">05 — Asesoramiento</div><h3>Acompañar al asociado</h3><p>Ofrecer acompañamiento en normativas nacionales e internacionales aplicables a la actividad.</p></div>
-    <a class="obj plat" href="plataforma.html"><div class="n">Plataforma CAEHFA</div><h3>Servicios digitales para socios</h3><p>Área privada, pago de cuotas, capacitación, normativa y catálogo de empresas. Todo en un solo lugar.</p><span class="plat-cta">Ingresar a la Plataforma →</span></a>
-  </div>
-</div></section>
-
-<!-- ===== Internacionalización ===== -->
-<section id="internacional" class="intl"><div class="wrap">
-  <div>
-    <span class="kick2">Internacionalización</span>
-    <h2>La tecnología médica argentina, en el mundo</h2>
-    <p>Impulsamos la presencia internacional de nuestros asociados a través de ferias, misiones comerciales y rondas de negocios, con acciones conjuntas junto a organismos públicos: el Ministerio de Ciencia, Tecnología e Innovación, CONICET, CIC Buenos Aires y universidades nacionales.</p>
-  </div>
-  <div class="events">
-    <div class="event"><div class="date"><b>28</b><span>Jul 26</span></div><div class="info"><b>Meditech 2026</b><span>Feria Internacional de la Salud · Bogotá, Colombia · 28–31 de julio</span></div></div>
-    <div class="event"><div class="date"><b>17</b><span>Jun 26</span></div><div class="info"><b>WHX Miami 2026</b><span>Empresas asociadas presentes · Miami, EE.UU. · 17–19 de junio</span></div></div>
-    <div class="event"><div class="date" style="background:var(--blue)"><b>★</b><span>Oferta</span></div><div class="info"><b>Oferta exportable argentina</b><span>Presentación de la industria nacional de tecnología médica</span></div></div>
-  </div>
-</div></section>
+</section>
 
 <!-- ===== Novedades ===== -->
-<section id="novedades"><div class="wrap">
-  <div class="shead" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none">
-    <div><span class="kick2">Novedades</span><h2>Últimas noticias del sector</h2></div>
-    <a class="btn btn-ghost btn-sm" href="#">Ver todas</a>
-  </div>
-  <div class="grid g3">
-    <article class="news">
-      <div class="img" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/placanota-350x220.png')"><span class="cat">Exportación</span></div>
-      <div class="body"><span class="date">Junio 2026</span><h3>CAEHFA presentó la oferta exportable de la industria argentina de tecnología médica</h3><span class="more">Leer más →</span></div>
-    </article>
-    <article class="news">
-      <div class="img" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/Post-multiplicadores-espanol-Meditech-2026-350x220.jpg')"><span class="cat">Ferias</span></div>
-      <div class="body"><span class="date">Junio 2026</span><h3>CAEHFA invita a participar de Meditech 2026, la Feria Internacional de la Salud en Colombia</h3><span class="more">Leer más →</span></div>
-    </article>
-    <article class="news">
-      <div class="img" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/9B51A188-36AD-42A2-AB74-B8B1C9230647-3-350x220.jpg')"><span class="cat">Internacional</span></div>
-      <div class="body"><span class="date">Junio 2026</span><h3>Empresas asociadas de CAEHFA participaron en WHX Miami 2026</h3><span class="more">Leer más →</span></div>
-    </article>
-  </div>
-</div></section>
-
-<!-- ===== Catálogo ===== -->
-<section id="catalogo"><div class="wrap">
-  <div class="cat-strip">
-    <div>
-      <span class="kick2">Empresas y Catálogo</span>
-      <h2>El directorio de la industria médica nacional</h2>
-      <p>Conocé a las empresas asociadas, sus productos y certificaciones. Una herramienta para compradores hospitalarios, organismos del Estado y licitantes que buscan proveedores nacionales.</p>
+<section id="novedades" style="background:var(--wash);padding-top:76px;padding-bottom:76px">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kick" data-i="nov_kick">Novedades</span>
+      <h2 class="st" data-i="nov_h2">Últimas noticias del sector</h2>
     </div>
-    <div class="right"><a class="btn btn-red" href="plataforma.html#catalogo">Explorar el catálogo →</a></div>
+    <div class="cardgrid news-grid">
+      <article class="news"><div class="im" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/placanota-350x220.png')"></div><div class="bd"><span class="dt">Junio 2026</span><h3>CAEHFA presentó la oferta exportable de la industria argentina</h3></div></article>
+      <article class="news"><div class="im" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/Post-multiplicadores-espanol-Meditech-2026-350x220.jpg')"></div><div class="bd"><span class="dt">Junio 2026</span><h3>Invitación a Meditech 2026, la Feria de la Salud en Colombia</h3></div></article>
+      <article class="news"><div class="im" style="background-image:url('https://www.caehfa.org.ar/wp-content/uploads/2026/06/9B51A188-36AD-42A2-AB74-B8B1C9230647-3-350x220.jpg')"></div><div class="bd"><span class="dt">Junio 2026</span><h3>Empresas asociadas participaron en WHX Miami 2026</h3></div></article>
+    </div>
   </div>
-</div></section>
+</section>
 
-<!-- ===== Observatorio + Academia teaser ===== -->
-<section id="observatorio" style="padding-top:0"><div class="wrap">
-  <div class="grid g2">
-    <div class="obj" style="padding:32px"><span class="kick2">Observatorio</span><h3 style="font-size:22px;margin-top:9px">Análisis del sector</h3><p style="font-size:15px">Información, estadísticas e informes sobre la industria de tecnología médica argentina: producción, comercio exterior y coyuntura.</p><a class="btn btn-out btn-sm" href="plataforma.html#observatorio" style="margin-top:16px">Ver observatorio</a></div>
-    <div class="obj" id="academia" style="padding:32px"><span class="kick2">Academia</span><h3 style="font-size:22px;margin-top:9px">Capacitación para el sector</h3><p style="font-size:15px">Cursos, jornadas y capacitaciones sobre normativa, calidad y comercio exterior para los profesionales de las empresas asociadas.</p><a class="btn btn-out btn-sm" href="plataforma.html#academia" style="margin-top:16px">Ver Academia</a></div>
-  </div>
-</div></section>
+<!-- ===== Backoffice teaser ===== -->
+<section class="bo" id="nosotros">
+  <div class="wrap"><div class="box">
+    <div>
+      <span class="kick" data-i="bo_kick">Autogestión</span>
+      <h2 class="st" data-i="bo_h2">Ustedes lo mantienen al día</h2>
+      <p style="font-size:16.5px;color:var(--slate);margin-top:14px" data-i="bo_p">Un backoffice propio para cargar y editar socios, productos, cursos y novedades —en los tres idiomas— sin depender de nadie. Todo lo que cargan alimenta el buscador al instante.</p>
+      <ul>
+        <li><span class="ck">✓</span><div data-i="bo_1"><b>Socios y productos</b> — alta, edición, fotos y video.</div></li>
+        <li><span class="ck">✓</span><div data-i="bo_2"><b>Cursos, noticias y novedades</b> — publicá en minutos.</div></li>
+        <li><span class="ck">✓</span><div data-i="bo_3"><b>Tres idiomas</b> — cargá una vez, traducimos nosotros.</div></li>
+      </ul>
+    </div>
+    <div class="mock">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <div class="side"><a class="on">Socios</a><a>Productos</a><a>Cursos</a><a>Novedades</a><a>Idiomas</a></div>
+        <div class="rows">
+          <div class="row"><b>MEDIX S.A.</b> · Ventiladores <span class="st" data-i="published">Publicado</span></div>
+          <div class="row"><b>Tecnomed</b> · Esterilización <span class="st" data-i="published">Publicado</span></div>
+          <div class="row"><b>BioSanitas</b> · Insumos <span class="st" data-i="published">Publicado</span></div>
+          <div class="row"><b>Diagnostix</b> · Imágenes <span class="st" style="color:#B9740B;background:#FBF0DD" data-i="draft">Borrador</span></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
 
 <!-- ===== Footer ===== -->
 <footer id="contacto"><div class="wrap">
   <div class="cols">
     <div>
-      <img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/CAEHFA-pie-small.png" alt="CAEHFA" style="height:54px;background:#fff;padding:8px 12px;border-radius:8px" />
-      <p style="margin-top:16px;max-width:300px;font-size:13.5px">Cámara de Equipamiento Hospitalario de Fabricación Argentina. Representamos desde 1976 a la industria nacional de tecnología médico-hospitalaria.</p>
+      <img src="assets/caehfa-pie.png" alt="CAEHFA" style="height:52px;background:#fff;padding:8px 11px;border-radius:8px" />
+      <p style="margin-top:16px;max-width:300px;font-size:13.5px" data-i="foot_about">Cámara de Equipamiento Hospitalario de Fabricación Argentina. Desde 1976, la industria nacional de tecnología médico-hospitalaria.</p>
     </div>
-    <div><h4>Institucional</h4><a href="#nosotros">Asociados</a><a href="#nosotros">Autoridades</a><a href="#nosotros">Historia</a><a href="#nosotros">Legislación</a><a href="#nosotros">Cadena de Valor</a></div>
-    <div><h4>Secciones</h4><a href="#catalogo">Empresas y Catálogo</a><a href="#novedades">Novedades</a><a href="#observatorio">Observatorio</a><a href="#academia">Academia</a><a href="plataforma.html">Acceso socios</a></div>
-    <div class="contact"><h4>Contacto</h4>
-      <p>Alsina 1609, Piso 3</p><p>CABA, República Argentina</p>
-      <p>+54 9 11 6167-7129</p><p>secretariatecnica@caehfa.org</p>
-      <div class="logos">
-        <img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/logo-Adimra-texto-small.png" alt="ADIMRA" />
-        <img src="https://www.caehfa.org.ar/wp-content/uploads/2022/03/Logotipoargentina2021-small.png" alt="Argentina" />
-      </div>
+    <div><h4 data-i="nav_inst">Institucional</h4><a onclick="jump('nosotros')">Quiénes somos</a><a>Autoridades</a><a>Historia</a><a>Cadena de valor</a></div>
+    <div><h4 data-i="foot_site">Secciones</h4><a onclick="jump('catalogo')" data-i="nav_soc">Socios</a><a onclick="jump('cursos')" data-i="nav_cur">Cursos</a><a onclick="jump('intl')" data-i="nav_int">Internacional</a><a onclick="jump('novedades')" data-i="nav_nov">Novedades</a></div>
+    <div><h4 data-i="nav_con">Contacto</h4>
+      <p>Alsina 1609, Piso 3 · CABA</p><p>+54 9 11 6167-7129</p><p>secretariatecnica@caehfa.org</p>
+      <div class="logos"><img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/logo-Adimra-texto-small.png" alt="ADIMRA" /><img src="https://www.caehfa.org.ar/wp-content/uploads/2022/03/Logotipoargentina2021-small.png" alt="Argentina" /></div>
     </div>
   </div>
-  <div class="bot">
-    <span>© 2026 CAEHFA · Miembro de ADIMRA</span>
-    <span>Sitio renovado — propuesta de <a href="propuesta.html">Pinaro</a></span>
-  </div>
+  <div class="bot"><span>© 2026 CAEHFA · Miembro de ADIMRA</span><span>Sitio renovado — propuesta de <a href="propuesta.html">Pinaro</a></span></div>
 </div></footer>
 
-<!-- mobile drawer -->
-<div class="drawer" id="drawer">
-  <div class="panel">
-    <button class="x" onclick="document.getElementById('drawer').classList.remove('open')">×</button>
+<!-- drawer -->
+<div class="drawer" id="dr">
+  <div class="pan">
+    <button class="x" onclick="document.getElementById('dr').classList.remove('open')">×</button>
     <div style="clear:both"></div>
-    <a href="#inicio" onclick="closeDrawer()">Inicio</a>
-    <a href="#nosotros" onclick="closeDrawer()">Institucional</a>
-    <a class="sub" href="#nosotros" onclick="closeDrawer()">Asociados · Autoridades · Historia</a>
-    <a class="sub" href="#nosotros" onclick="closeDrawer()">Legislación · Cadena de Valor</a>
-    <a href="#catalogo" onclick="closeDrawer()">Empresas y Catálogo</a>
-    <a href="#novedades" onclick="closeDrawer()">Novedades</a>
-    <a href="#observatorio" onclick="closeDrawer()">Observatorio</a>
-    <a href="#academia" onclick="closeDrawer()">Academia</a>
-    <a href="#contacto" onclick="closeDrawer()">Contacto</a>
-    <a href="plataforma.html" style="color:var(--red)">Acceso socios →</a>
+    <a onclick="jump('nosotros');dclose()" data-i="nav_inst">Institucional</a>
+    <a onclick="jump('catalogo');dclose()" data-i="nav_soc">Socios</a>
+    <a onclick="jump('cursos');dclose()" data-i="nav_cur">Cursos</a>
+    <a onclick="jump('intl');dclose()" data-i="nav_int">Internacional</a>
+    <a onclick="jump('novedades');dclose()" data-i="nav_nov">Novedades</a>
+    <a onclick="jump('contacto');dclose()" data-i="nav_con">Contacto</a>
   </div>
 </div>
 
 <script>
-function closeDrawer(){document.getElementById('drawer').classList.remove('open');}
-document.getElementById('drawer').addEventListener('click',function(e){if(e.target===this)closeDrawer();});
+function jump(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+function dclose(){document.getElementById('dr').classList.remove('open');}
+document.getElementById('dr').addEventListener('click',function(e){if(e.target===this)dclose();});
+
+/* ---------- Catálogo dataset + búsqueda ---------- */
+var DATA=[
+  {t:'empresa',mono:'MX',name:'MEDIX S.A.',desc:'Ventiladores, monitores y bombas de infusión',tags:['ISO 13485','ANMAT','Exporta','Buenos Aires'],video:1,k:'ventiladores monitores bombas exporta'},
+  {t:'empresa',mono:'TN',name:'Tecnomed Argentina',desc:'Autoclaves y equipamiento de esterilización',tags:['IRAM','ANMAT','Buenos Aires'],video:1,k:'esterilización autoclave quirófano'},
+  {t:'empresa',mono:'BS',name:'BioSanitas',desc:'Insumos y descartables hospitalarios',tags:['ISO 13485','Córdoba'],k:'insumos descartables'},
+  {t:'producto',mono:'▣',name:'Ventilador mecánico VX-9',desc:'MEDIX S.A. · Clase III · UCI y traslado',tags:['Ventiladores','ANMAT'],k:'ventiladores respirador uci medix'},
+  {t:'producto',mono:'▣',name:'Autoclave 120L',desc:'Tecnomed · Esterilización por calor húmedo',tags:['Esterilización','IRAM'],k:'esterilización autoclave calor'},
+  {t:'producto',mono:'▣',name:'Monitor multiparamétrico M5',desc:'MEDIX S.A. · ECG, SpO₂, presión',tags:['Monitores','ANMAT'],k:'monitor multiparametrico ecg'},
+  {t:'curso',mono:'🎓',name:'Novedades regulatorias ANMAT 2026',desc:'En vivo · 12 AGO · Gratis para socios',tags:['ANMAT','En vivo'],k:'anmat normativa curso regulatorio'},
+  {t:'curso',mono:'🎓',name:'Comercio exterior para tecnología médica',desc:'Asincrónico · exportación e internacionalización',tags:['Exportación','Comercio exterior'],k:'exportación comercio exterior curso'},
+  {t:'curso',mono:'🎓',name:'Uso y mantenimiento de equipamiento médico',desc:'Abierto a todo el sector salud',tags:['Mantenimiento','Abierto'],k:'mantenimiento equipos curso sector'}
+];
+var TL={empresa:['Empresa','tg-emp'],producto:['Producto','tg-prod'],curso:['Curso','tg-cur']};
+var curF='all', curQ='';
+function renderCat(){
+  var g=document.getElementById('cat-grid');var q=curQ.toLowerCase();
+  var items=DATA.filter(function(d){
+    if(curF!=='all'&&d.t!==curF)return false;
+    if(!q)return true;
+    return (d.name+' '+d.desc+' '+d.k+' '+d.tags.join(' ')).toLowerCase().includes(q);
+  });
+  if(!items.length){g.innerHTML='<div class="nores">'+ (T[lang].nores||'Sin resultados') +'</div>';return;}
+  g.innerHTML=items.map(function(d){
+    var vid=d.video?'<span class="vid">▶ Video</span>':'';
+    return '<div class="rcard"><div class="top '+TL[d.t][1]+'"><span class="type">'+TL[d.t][0]+'</span>'+vid+'<div class="mono">'+d.mono+'</div></div>'+
+      '<div class="bd"><h3>'+d.name+'</h3><div class="desc">'+d.desc+'</div><div class="tags">'+d.tags.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div></div></div>';
+  }).join('');
+}
+function filterCat(){curQ=document.getElementById('cat-search').value;renderCat();}
+function setF(el){document.querySelectorAll('#cat-chips .c').forEach(function(c){c.classList.remove('on')});el.classList.add('on');curF=el.dataset.f;renderCat();}
+function heroSearch(){var v=document.getElementById('hero-search').value;curQ=v;document.getElementById('cat-search').value=v;curF='all';document.querySelectorAll('#cat-chips .c').forEach(function(c){c.classList.toggle('on',c.dataset.f==='all')});renderCat();jump('catalogo');}
+function quick(v){document.getElementById('hero-search').value=v;heroSearch();}
+
+/* ---------- Indicadores count-up ---------- */
+function countUp(el){var to=+el.dataset.to,suf=el.dataset.suf||'',raw=el.dataset.raw,t0=null,dur=1400;
+  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var e=1-Math.pow(1-p,3);var val=Math.round(to*e);
+    el.textContent=(raw?val:val.toLocaleString('es-AR'))+suf;if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);}
+var indObs=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.cnt').forEach(countUp);o.disconnect();}})},{threshold:.4});
+indObs.observe(document.querySelector('.ind'));
+
+/* ---------- Mapa internacional ---------- */
+var MARKERS=[
+  {n:'Argentina',c:'Sede · Buenos Aires',lon:-58.4,lat:-34.6,ty:'hub'},
+  {n:'Brasil',c:'Exportaciones',lon:-47,lat:-15,ty:'exp'},
+  {n:'Chile',c:'Exportaciones',lon:-70.6,lat:-33.4,ty:'exp'},
+  {n:'Uruguay',c:'Exportaciones',lon:-56,lat:-34,ty:'exp'},
+  {n:'Paraguay',c:'Exportaciones',lon:-57.6,lat:-25.3,ty:'exp'},
+  {n:'México',c:'Exportaciones',lon:-99,lat:19.4,ty:'exp'},
+  {n:'Colombia · Bogotá',c:'Meditech 2026 · Feria',lon:-74,lat:4.7,ty:'fer'},
+  {n:'EE.UU. · Miami',c:'WHX Miami · Feria',lon:-80.2,lat:25.8,ty:'fer'},
+  {n:'Emiratos · Dubái',c:'Misión comercial',lon:55.3,lat:25.2,ty:'mis'},
+  {n:'España · Madrid',c:'Misión comercial',lon:-3.7,lat:40.4,ty:'mis'}
+];
+// polígonos de continentes (lon,lat) — aproximados, para un mapa punteado
+var CONT=[
+ [[-168,66],[-150,71],[-120,71],[-95,70],[-80,62],[-64,60],[-52,47],[-66,44],[-82,25],[-97,16],[-106,20],[-117,32],[-125,42],[-130,54],[-150,60],[-168,66]],
+ [[-81,9],[-72,11],[-60,10],[-50,0],[-35,-6],[-38,-16],[-48,-25],[-58,-35],[-66,-46],[-73,-53],[-72,-40],[-70,-20],[-79,-4],[-81,9]],
+ [[-10,36],[-9,44],[-4,49],[3,51],[11,54],[24,56],[30,50],[40,47],[45,41],[28,36],[14,37],[0,37],[-10,36]],
+ [[-17,15],[-16,28],[10,33],[24,32],[34,30],[43,12],[51,11],[41,-4],[38,-18],[25,-34],[18,-34],[10,-16],[8,4],[-11,5],[-17,15]],
+ [[42,47],[52,55],[64,61],[84,66],[104,68],[132,68],[143,58],[140,48],[135,35],[122,30],[110,20],[97,8],[80,7],[77,22],[60,25],[46,40],[42,47]],
+ [[113,-22],[122,-18],[133,-12],[142,-16],[150,-25],[148,-38],[138,-35],[128,-32],[115,-34],[113,-22]]
+];
+var L_MIN=-170,L_MAX=178,T_MAX=74,T_MIN=-56;
+function proj(lon,lat,w,h){return [ (lon-L_MIN)/(L_MAX-L_MIN)*w, (T_MAX-lat)/(T_MAX-T_MIN)*h ];}
+function inPoly(x,y,p){var c=false;for(var i=0,j=p.length-1;i<p.length;j=i++){var xi=p[i][0],yi=p[i][1],xj=p[j][0],yj=p[j][1];if(((yi>y)!=(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c;}return c;}
+var mapPhase=0;
+function drawMap(){
+  var cv=document.getElementById('map'),wrap=document.getElementById('mapwrap');
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var w=wrap.clientWidth,h=wrap.clientHeight;if(!w)return;
+  cv.width=w*dpr;cv.height=h*dpr;var ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,w,h);
+  // dots
+  var step=3.0;
+  for(var lon=L_MIN;lon<=L_MAX;lon+=step){for(var lat=T_MIN;lat<=T_MAX;lat+=step){
+    var hit=false;for(var k=0;k<CONT.length;k++){if(inPoly(lon,lat,CONT[k])){hit=true;break;}}
+    if(hit){var pt=proj(lon,lat,w,h);ctx.beginPath();ctx.arc(pt[0],pt[1],1.15,0,7);ctx.fillStyle='rgba(255,255,255,.16)';ctx.fill();}
+  }}
+  // arcs desde Argentina
+  var hub=proj(MARKERS[0].lon,MARKERS[0].lat,w,h);
+  mapPhase+=0.006;
+  MARKERS.forEach(function(m,i){if(i===0)return;var p=proj(m.lon,m.lat,w,h);
+    var mx=(hub[0]+p[0])/2, my=(hub[1]+p[1])/2 - Math.abs(p[0]-hub[0])*0.28 - 30;
+    ctx.beginPath();ctx.moveTo(hub[0],hub[1]);ctx.quadraticCurveTo(mx,my,p[0],p[1]);
+    var col=m.ty==='fer'?'rgba(63,196,245,.5)':m.ty==='mis'?'rgba(255,209,102,.5)':'rgba(255,90,104,.45)';
+    ctx.strokeStyle=col;ctx.lineWidth=1.3;ctx.stroke();
+    // pulso viajando
+    var tt=(Math.sin(mapPhase*2+i)*0.5+0.5);
+    var bx=(1-tt)*(1-tt)*hub[0]+2*(1-tt)*tt*mx+tt*tt*p[0];
+    var by=(1-tt)*(1-tt)*hub[1]+2*(1-tt)*tt*my+tt*tt*p[1];
+    ctx.beginPath();ctx.arc(bx,by,2.2,0,7);ctx.fillStyle='#fff';ctx.fill();
+  });
+  placeMarkers(w,h);
+  requestAnimationFrame(drawMap);
+}
+function placeMarkers(w,h){
+  var wrap=document.getElementById('mapwrap');
+  if(wrap._mk)return; // crear una sola vez
+  wrap._mk=true;
+  MARKERS.forEach(function(m){
+    var p=proj(m.lon,m.lat,w,h);
+    var d=document.createElement('div');d.className='mk '+m.ty;
+    d.style.left=(p[0]/w*100)+'%';d.style.top=(p[1]/h*100)+'%';
+    d.innerHTML='<div class="pin"></div><div class="tip"><b>'+m.n+'</b><small>'+m.c+'</small></div>';
+    wrap.appendChild(d);
+  });
+}
+window.addEventListener('resize',function(){var wrap=document.getElementById('mapwrap');wrap._mk=false;wrap.querySelectorAll('.mk').forEach(function(e){e.remove()});});
+
+/* ---------- i18n ---------- */
+var T={
+ es:{tagline:'Equipamiento Hospitalario de Fabricación Argentina',nav_inst:'Institucional',nav_soc:'Socios',nav_cur:'Cursos',nav_int:'Internacional',nav_nov:'Novedades',nav_con:'Contacto',
+   hero_chip:'Industria nacional · desde 1976',hero_h1a:'La industria argentina de',hero_h1b:'tecnología médico-hospitalaria',hero_sub:'Representamos a las empresas fabricantes de equipamiento hospitalario e insumos del país. Encontrá una empresa, un producto o un curso en segundos.',hero_ph:'Buscá una empresa, un producto o un curso…',hero_btn:'Buscar',
+   ind_emp:'empresas asociadas',ind_dir:'empleos directos',ind_ind:'empleos indirectos',ind_year:'representando al sector',
+   cat_kick:'Catálogo de socios · buscador',cat_h2:'Encontrá empresas, productos y cursos',cat_p:'El corazón del sitio: un buscador que atraviesa todo el contenido. Las empresas presentan sus productos, certificaciones y hasta un video, y actualizan su ficha desde el panel.',cat_ph:'Buscar por empresa, producto, certificación o provincia…',f_all:'Todos',f_emp:'Empresas',f_prod:'Productos',f_cur:'Cursos',nores:'Sin resultados',
+   int_kick:'Presencia internacional',int_h2:'Donde llega la industria argentina',int_p:'Exportaciones, ferias y misiones comerciales. La pata internacional del sector, en un mapa vivo.',lg_exp:'Exportaciones',lg_fer:'Ferias',lg_mis:'Misiones comerciales',
+   cur_kick:'Academia CAEHFA',cur_h2:'Capacitación para el sector',cur_p:'Cursos y jornadas sobre normativa, calidad y comercio exterior. Abiertos a socios y a todo el sector salud.',free:'Gratis socios',open_sector:'ABIERTO AL SECTOR',
+   nov_kick:'Novedades',nov_h2:'Últimas noticias del sector',
+   bo_kick:'Autogestión',bo_h2:'Ustedes lo mantienen al día',bo_p:'Un backoffice propio para cargar y editar socios, productos, cursos y novedades —en los tres idiomas— sin depender de nadie. Todo lo que cargan alimenta el buscador al instante.',bo_1:'<b>Socios y productos</b> — alta, edición, fotos y video.',bo_2:'<b>Cursos, noticias y novedades</b> — publicá en minutos.',bo_3:'<b>Tres idiomas</b> — cargá una vez, traducimos nosotros.',published:'Publicado',draft:'Borrador',
+   foot_about:'Cámara de Equipamiento Hospitalario de Fabricación Argentina. Desde 1976, la industria nacional de tecnología médico-hospitalaria.',foot_site:'Secciones'},
+ en:{tagline:'Argentine Hospital Equipment Manufacturers',nav_inst:'About',nav_soc:'Members',nav_cur:'Courses',nav_int:'International',nav_nov:'News',nav_con:'Contact',
+   hero_chip:'National industry · since 1976',hero_h1a:'Argentina’s',hero_h1b:'medical & hospital technology',hero_sub:'We represent the country’s manufacturers of hospital equipment and medical supplies. Find a company, a product or a course in seconds.',hero_ph:'Search a company, a product or a course…',hero_btn:'Search',
+   ind_emp:'member companies',ind_dir:'direct jobs',ind_ind:'indirect jobs',ind_year:'representing the sector',
+   cat_kick:'Members catalog · search',cat_h2:'Find companies, products and courses',cat_p:'The heart of the site: a search that spans all content. Companies show their products, certifications and even a video, and update their profile from the panel.',cat_ph:'Search by company, product, certification or province…',f_all:'All',f_emp:'Companies',f_prod:'Products',f_cur:'Courses',nores:'No results',
+   int_kick:'International presence',int_h2:'Where Argentine industry reaches',int_p:'Exports, trade shows and business missions. The sector’s international footprint, on a live map.',lg_exp:'Exports',lg_fer:'Trade shows',lg_mis:'Business missions',
+   cur_kick:'CAEHFA Academy',cur_h2:'Training for the sector',cur_p:'Courses on regulation, quality and foreign trade. Open to members and the whole health sector.',free:'Free · members',open_sector:'OPEN TO THE SECTOR',
+   nov_kick:'News',nov_h2:'Latest sector news',
+   bo_kick:'Self-management',bo_h2:'You keep it up to date',bo_p:'A dedicated backoffice to add and edit members, products, courses and news —in all three languages— on your own. Everything you load feeds the search instantly.',bo_1:'<b>Members & products</b> — add, edit, photos and video.',bo_2:'<b>Courses, news & updates</b> — publish in minutes.',bo_3:'<b>Three languages</b> — load once, we translate.',published:'Published',draft:'Draft',
+   foot_about:'Argentine Chamber of Hospital Equipment Manufacturers. Since 1976, the national medical-hospital technology industry.',foot_site:'Sections'},
+ pt:{tagline:'Equipamentos Hospitalares de Fabricação Argentina',nav_inst:'Institucional',nav_soc:'Associados',nav_cur:'Cursos',nav_int:'Internacional',nav_nov:'Novidades',nav_con:'Contato',
+   hero_chip:'Indústria nacional · desde 1976',hero_h1a:'A indústria argentina de',hero_h1b:'tecnologia médico-hospitalar',hero_sub:'Representamos as empresas fabricantes de equipamentos hospitalares e insumos do país. Encontre uma empresa, um produto ou um curso em segundos.',hero_ph:'Busque uma empresa, um produto ou um curso…',hero_btn:'Buscar',
+   ind_emp:'empresas associadas',ind_dir:'empregos diretos',ind_ind:'empregos indiretos',ind_year:'representando o setor',
+   cat_kick:'Catálogo de associados · busca',cat_h2:'Encontre empresas, produtos e cursos',cat_p:'O coração do site: uma busca que atravessa todo o conteúdo. As empresas apresentam seus produtos, certificações e até vídeo, e atualizam sua ficha pelo painel.',cat_ph:'Buscar por empresa, produto, certificação ou província…',f_all:'Todos',f_emp:'Empresas',f_prod:'Produtos',f_cur:'Cursos',nores:'Sem resultados',
+   int_kick:'Presença internacional',int_h2:'Onde chega a indústria argentina',int_p:'Exportações, feiras e missões comerciais. A pata internacional do setor, em um mapa vivo.',lg_exp:'Exportações',lg_fer:'Feiras',lg_mis:'Missões comerciais',
+   cur_kick:'Academia CAEHFA',cur_h2:'Capacitação para o setor',cur_p:'Cursos sobre normativa, qualidade e comércio exterior. Abertos a associados e a todo o setor de saúde.',free:'Grátis associados',open_sector:'ABERTO AO SETOR',
+   nov_kick:'Novidades',nov_h2:'Últimas notícias do setor',
+   bo_kick:'Autogestão',bo_h2:'Vocês mantêm em dia',bo_p:'Um backoffice próprio para cadastrar e editar associados, produtos, cursos e novidades —nos três idiomas— sem depender de ninguém. Tudo que carregam alimenta a busca na hora.',bo_1:'<b>Associados e produtos</b> — cadastro, edição, fotos e vídeo.',bo_2:'<b>Cursos, notícias e novidades</b> — publique em minutos.',bo_3:'<b>Três idiomas</b> — carregue uma vez, traduzimos nós.',published:'Publicado',draft:'Rascunho',
+   foot_about:'Câmara de Equipamentos Hospitalares de Fabricação Argentina. Desde 1976, a indústria nacional de tecnologia médico-hospitalar.',foot_site:'Seções'}
+};
+var lang='es';
+function setLang(l){
+  lang=l;document.documentElement.lang=l;
+  document.querySelectorAll('#langs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
+  var d=T[l];
+  document.querySelectorAll('[data-i]').forEach(function(el){var k=el.dataset.i;if(d[k]!=null)el.innerHTML=d[k];});
+  document.querySelectorAll('[data-i-ph]').forEach(function(el){var k=el.dataset.iPh;if(d[k]!=null)el.placeholder=d[k];});
+  var tag=document.querySelector('[data-i="tagline"], .bt small');
+  renderCat();
+}
+
+/* init */
+renderCat();
+requestAnimationFrame(drawMap);
 </script>
 </body>
 </html>
