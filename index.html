@@ -163,24 +163,15 @@ h2.st{font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--ink);margin:1
 .news .dt{font-size:12.5px;color:var(--soft);font-weight:600}
 .news h3{font-family:var(--fd);font-size:16.5px;font-weight:600;color:var(--ink);margin-top:7px;line-height:1.3}
 
-/* backoffice teaser */
-.bo{background:var(--wash)}
-.bo .box{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
-.bo .mock{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);overflow:hidden}
-.bo .mock .bar{height:38px;background:var(--wash);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;padding:0 14px}
-.bo .mock .bar i{width:10px;height:10px;border-radius:50%;background:var(--border2);display:inline-block}
-.bo .mock .body{padding:16px;display:grid;grid-template-columns:120px 1fr;gap:14px}
-.bo .mock .side{display:grid;gap:7px}
-.bo .mock .side a{font-size:12px;color:var(--slate);padding:7px 9px;border-radius:7px;background:var(--wash)}
-.bo .mock .side a.on{background:var(--red);color:#fff;font-weight:600}
-.bo .mock .rows{display:grid;gap:9px}
-.bo .mock .row{display:flex;align-items:center;gap:10px;border:1px solid var(--border);border-radius:8px;padding:9px 11px;font-size:12px;color:var(--slate)}
-.bo .mock .row b{color:var(--ink);font-weight:600}
-.bo .mock .row .st{margin-left:auto;font-size:10.5px;font-weight:700;color:#138A52;background:#E5F4EC;padding:2px 8px;border-radius:100px}
-.bo ul{list-style:none;display:grid;gap:12px;margin-top:18px}
-.bo li{display:flex;gap:11px;font-size:15.5px;color:var(--slate)}
-.bo li b{color:var(--ink)}
-.bo li .ck{color:var(--red);font-weight:700}
+/* quiénes somos */
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+.objc{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;transition:.18s}
+.objc:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--red)}
+.objc .ic{width:46px;height:46px;border-radius:12px;background:var(--cel-soft);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.objc h3{font-family:var(--fd);font-size:17px;font-weight:600;color:var(--ink)}
+.objc p{font-size:13.5px;color:var(--slate);margin-top:7px;line-height:1.5}
+.adimra{display:flex;align-items:center;gap:16px;margin-top:30px;padding:18px 22px;background:var(--wash);border:1px solid var(--border);border-radius:var(--r);font-size:14.5px;color:var(--slate)}
+.adimra img{height:40px;background:#fff;padding:5px 8px;border-radius:7px;border:1px solid var(--border)}
 
 /* footer */
 footer{background:var(--ink);color:#aab3bc;padding:60px 0 30px;font-size:14px}
@@ -206,16 +197,13 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
   .ind .grid{grid-template-columns:1fr 1fr;gap:30px 20px}
   .cardgrid{grid-template-columns:1fr}
   .course-grid,.news-grid{grid-template-columns:1fr !important}
-  .bo .box{grid-template-columns:1fr;gap:28px}
+  .objgrid{grid-template-columns:1fr 1fr}
   footer .cols{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
   footer .cols{grid-template-columns:1fr}.tools .chips{width:100%}
-  .bo .mock .body{grid-template-columns:1fr}
-  .bo .mock .side{display:flex;flex-wrap:wrap}
-  .bo .mock .side a{flex:0 0 auto}
-  .bo .mock .row{flex-wrap:wrap;gap:6px}
-  .bo .mock .row .st{margin-left:0}
+  .objgrid{grid-template-columns:1fr}
+  .adimra{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -361,32 +349,25 @@ footer .bot a{display:inline;color:#fff;text-decoration:underline}
   </div>
 </section>
 
-<!-- ===== Backoffice teaser ===== -->
-<section class="bo" id="nosotros">
-  <div class="wrap"><div class="box">
-    <div>
-      <span class="kick" data-i="bo_kick">Autogestión</span>
-      <h2 class="st" data-i="bo_h2">Ustedes lo mantienen al día</h2>
-      <p style="font-size:16.5px;color:var(--slate);margin-top:14px" data-i="bo_p">Un backoffice propio para cargar y editar socios, productos, cursos y novedades —en los tres idiomas— sin depender de nadie. Todo lo que cargan alimenta el buscador al instante.</p>
-      <ul>
-        <li><span class="ck">✓</span><div data-i="bo_1"><b>Socios y productos</b> — alta, edición, fotos y video.</div></li>
-        <li><span class="ck">✓</span><div data-i="bo_2"><b>Cursos, noticias y novedades</b> — publicá en minutos.</div></li>
-        <li><span class="ck">✓</span><div data-i="bo_3"><b>Tres idiomas</b> — cargá una vez, traducimos nosotros.</div></li>
-      </ul>
+<!-- ===== Quiénes somos ===== -->
+<section id="nosotros">
+  <div class="wrap">
+    <div class="shead">
+      <span class="kick" data-i="ab_kick">Institucional</span>
+      <h2 class="st" data-i="ab_h2">La industria nacional, unida desde 1976</h2>
+      <p data-i="ab_p">CAEHFA nuclea a las empresas fabricantes de equipamiento hospitalario e insumos médicos del país: PyMEs nacionales con diseños propios e innovación, que generan empleo de calidad y abastecen al sistema de salud público y privado de toda la Argentina.</p>
     </div>
-    <div class="mock">
-      <div class="bar"><i></i><i></i><i></i></div>
-      <div class="body">
-        <div class="side"><a class="on">Socios</a><a>Productos</a><a>Cursos</a><a>Novedades</a><a>Idiomas</a></div>
-        <div class="rows">
-          <div class="row"><b>MEDIX S.A.</b> · Ventiladores <span class="st" data-i="published">Publicado</span></div>
-          <div class="row"><b>Tecnomed</b> · Esterilización <span class="st" data-i="published">Publicado</span></div>
-          <div class="row"><b>BioSanitas</b> · Insumos <span class="st" data-i="published">Publicado</span></div>
-          <div class="row"><b>Diagnostix</b> · Imágenes <span class="st" style="color:#B9740B;background:#FBF0DD" data-i="draft">Borrador</span></div>
-        </div>
-      </div>
+    <div class="objgrid">
+      <div class="objc"><div class="ic">🛡️</div><h3 data-i="ab_o1t">Defensa del sector</h3><p data-i="ab_o1p">Representamos y protegemos los intereses de la industria nacional frente al Estado y los mercados.</p></div>
+      <div class="objc"><div class="ic">🏭</div><h3 data-i="ab_o2t">Producción nacional</h3><p data-i="ab_o2p">Impulsamos la fabricación local de tecnología médica, con innovación y valor agregado argentino.</p></div>
+      <div class="objc"><div class="ic">🌎</div><h3 data-i="ab_o3t">Internacionalización</h3><p data-i="ab_o3p">Acompañamos la exportación a través de ferias, misiones comerciales y rondas de negocios.</p></div>
+      <div class="objc"><div class="ic">🎓</div><h3 data-i="ab_o4t">Asesoramiento</h3><p data-i="ab_o4p">Capacitación y acompañamiento en normativa nacional e internacional aplicable al sector.</p></div>
     </div>
-  </div></div>
+    <div class="adimra">
+      <img src="https://www.caehfa.org.ar/wp-content/uploads/2018/06/logo-Adimra-texto-small.png" alt="ADIMRA" />
+      <span data-i="ab_adimra">Miembro de ADIMRA — Asociación de Industriales Metalúrgicos de la República Argentina.</span>
+    </div>
+  </div>
 </section>
 
 <!-- ===== Footer ===== -->
@@ -544,7 +525,7 @@ var T={
    int_kick:'Presencia internacional',int_h2:'Donde llega la industria argentina',int_p:'Exportaciones, ferias y misiones comerciales. La pata internacional del sector, en un mapa vivo.',lg_exp:'Exportaciones',lg_fer:'Ferias',lg_mis:'Misiones comerciales',
    cur_kick:'Academia CAEHFA',cur_h2:'Capacitación para el sector',cur_p:'Cursos y jornadas sobre normativa, calidad y comercio exterior. Abiertos a socios y a todo el sector salud.',free:'Gratis socios',open_sector:'ABIERTO AL SECTOR',
    nov_kick:'Novedades',nov_h2:'Últimas noticias del sector',
-   bo_kick:'Autogestión',bo_h2:'Ustedes lo mantienen al día',bo_p:'Un backoffice propio para cargar y editar socios, productos, cursos y novedades —en los tres idiomas— sin depender de nadie. Todo lo que cargan alimenta el buscador al instante.',bo_1:'<b>Socios y productos</b> — alta, edición, fotos y video.',bo_2:'<b>Cursos, noticias y novedades</b> — publicá en minutos.',bo_3:'<b>Tres idiomas</b> — cargá una vez, traducimos nosotros.',published:'Publicado',draft:'Borrador',
+   ab_kick:'Institucional',ab_h2:'La industria nacional, unida desde 1976',ab_p:'CAEHFA nuclea a las empresas fabricantes de equipamiento hospitalario e insumos médicos del país: PyMEs nacionales con diseños propios e innovación, que generan empleo de calidad y abastecen al sistema de salud público y privado de toda la Argentina.',ab_o1t:'Defensa del sector',ab_o1p:'Representamos y protegemos los intereses de la industria nacional frente al Estado y los mercados.',ab_o2t:'Producción nacional',ab_o2p:'Impulsamos la fabricación local de tecnología médica, con innovación y valor agregado argentino.',ab_o3t:'Internacionalización',ab_o3p:'Acompañamos la exportación a través de ferias, misiones comerciales y rondas de negocios.',ab_o4t:'Asesoramiento',ab_o4p:'Capacitación y acompañamiento en normativa nacional e internacional aplicable al sector.',ab_adimra:'Miembro de ADIMRA — Asociación de Industriales Metalúrgicos de la República Argentina.',
    foot_about:'Cámara de Equipamiento Hospitalario de Fabricación Argentina. Desde 1976, la industria nacional de tecnología médico-hospitalaria.',foot_site:'Secciones'},
  en:{tagline:'Argentine Hospital Equipment Manufacturers',nav_inst:'About',nav_soc:'Members',nav_cur:'Courses',nav_int:'International',nav_nov:'News',nav_con:'Contact',
    hero_chip:'National industry · since 1976',hero_h1a:'Argentina’s',hero_h1b:'medical & hospital technology',hero_sub:'We represent the country’s manufacturers of hospital equipment and medical supplies. Find a company, a product or a course in seconds.',hero_ph:'Search a company, a product or a course…',hero_btn:'Search',
@@ -553,7 +534,7 @@ var T={
    int_kick:'International presence',int_h2:'Where Argentine industry reaches',int_p:'Exports, trade shows and business missions. The sector’s international footprint, on a live map.',lg_exp:'Exports',lg_fer:'Trade shows',lg_mis:'Business missions',
    cur_kick:'CAEHFA Academy',cur_h2:'Training for the sector',cur_p:'Courses on regulation, quality and foreign trade. Open to members and the whole health sector.',free:'Free · members',open_sector:'OPEN TO THE SECTOR',
    nov_kick:'News',nov_h2:'Latest sector news',
-   bo_kick:'Self-management',bo_h2:'You keep it up to date',bo_p:'A dedicated backoffice to add and edit members, products, courses and news —in all three languages— on your own. Everything you load feeds the search instantly.',bo_1:'<b>Members & products</b> — add, edit, photos and video.',bo_2:'<b>Courses, news & updates</b> — publish in minutes.',bo_3:'<b>Three languages</b> — load once, we translate.',published:'Published',draft:'Draft',
+   ab_kick:'About us',ab_h2:'The national industry, united since 1976',ab_p:'CAEHFA brings together the country’s manufacturers of hospital equipment and medical supplies: national SMEs with their own designs and innovation, generating quality jobs and supplying Argentina’s public and private health systems.',ab_o1t:'Sector advocacy',ab_o1p:'We represent and protect the interests of the national industry before the State and the markets.',ab_o2t:'National production',ab_o2p:'We drive local manufacturing of medical technology, with innovation and Argentine added value.',ab_o3t:'Internationalization',ab_o3p:'We support exports through trade shows, business missions and networking rounds.',ab_o4t:'Advisory',ab_o4p:'Training and guidance on national and international regulations for the sector.',ab_adimra:'Member of ADIMRA — Association of Metallurgical Industrialists of Argentina.',
    foot_about:'Argentine Chamber of Hospital Equipment Manufacturers. Since 1976, the national medical-hospital technology industry.',foot_site:'Sections'},
  pt:{tagline:'Equipamentos Hospitalares de Fabricação Argentina',nav_inst:'Institucional',nav_soc:'Associados',nav_cur:'Cursos',nav_int:'Internacional',nav_nov:'Novidades',nav_con:'Contato',
    hero_chip:'Indústria nacional · desde 1976',hero_h1a:'A indústria argentina de',hero_h1b:'tecnologia médico-hospitalar',hero_sub:'Representamos as empresas fabricantes de equipamentos hospitalares e insumos do país. Encontre uma empresa, um produto ou um curso em segundos.',hero_ph:'Busque uma empresa, um produto ou um curso…',hero_btn:'Buscar',
@@ -562,7 +543,7 @@ var T={
    int_kick:'Presença internacional',int_h2:'Onde chega a indústria argentina',int_p:'Exportações, feiras e missões comerciais. A pata internacional do setor, em um mapa vivo.',lg_exp:'Exportações',lg_fer:'Feiras',lg_mis:'Missões comerciais',
    cur_kick:'Academia CAEHFA',cur_h2:'Capacitação para o setor',cur_p:'Cursos sobre normativa, qualidade e comércio exterior. Abertos a associados e a todo o setor de saúde.',free:'Grátis associados',open_sector:'ABERTO AO SETOR',
    nov_kick:'Novidades',nov_h2:'Últimas notícias do setor',
-   bo_kick:'Autogestão',bo_h2:'Vocês mantêm em dia',bo_p:'Um backoffice próprio para cadastrar e editar associados, produtos, cursos e novidades —nos três idiomas— sem depender de ninguém. Tudo que carregam alimenta a busca na hora.',bo_1:'<b>Associados e produtos</b> — cadastro, edição, fotos e vídeo.',bo_2:'<b>Cursos, notícias e novidades</b> — publique em minutos.',bo_3:'<b>Três idiomas</b> — carregue uma vez, traduzimos nós.',published:'Publicado',draft:'Rascunho',
+   ab_kick:'Institucional',ab_h2:'A indústria nacional, unida desde 1976',ab_p:'A CAEHFA reúne as empresas fabricantes de equipamentos hospitalares e insumos médicos do país: PMEs nacionais com projetos próprios e inovação, que geram empregos de qualidade e abastecem o sistema de saúde público e privado de toda a Argentina.',ab_o1t:'Defesa do setor',ab_o1p:'Representamos e protegemos os interesses da indústria nacional perante o Estado e os mercados.',ab_o2t:'Produção nacional',ab_o2p:'Impulsionamos a fabricação local de tecnologia médica, com inovação e valor agregado argentino.',ab_o3t:'Internacionalização',ab_o3p:'Acompanhamos a exportação por meio de feiras, missões comerciais e rodadas de negócios.',ab_o4t:'Assessoria',ab_o4p:'Capacitação e acompanhamento em normativa nacional e internacional aplicável ao setor.',ab_adimra:'Membro da ADIMRA — Associação de Industriais Metalúrgicos da República Argentina.',
    foot_about:'Câmara de Equipamentos Hospitalares de Fabricação Argentina. Desde 1976, a indústria nacional de tecnologia médico-hospitalar.',foot_site:'Seções'}
 };
 var lang='es';
